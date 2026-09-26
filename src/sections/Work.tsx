@@ -1,11 +1,7 @@
 import AccentMask from "../components/AccentMask";
 ﻿const assetPathPrefix = "/assets";
-const imgW3Hero = `${assetPathPrefix}/w3-hero.png`;
-const imgW3Features = `${assetPathPrefix}/w3-features.png`;
-const imgW3Networks = `${assetPathPrefix}/w3-networks.png`;
-const imgBlkDetail = `${assetPathPrefix}/blk-detail.png`;
-const imgBlkTxns = `${assetPathPrefix}/blk-txns.png`;
-const imgBlkL2L1 = `${assetPathPrefix}/blk-l2l1.png`;
+const imgW3Showcase = `${assetPathPrefix}/w3-showcase.png`;
+const imgBlkShowcase = `${assetPathPrefix}/blk-showcase.png`;
 const imgFitShowcase = `${assetPathPrefix}/fit-showcase.png`;
 const imgMedShowcase = `${assetPathPrefix}/med-showcase.png`;
 const imgNuboConsole = `${assetPathPrefix}/nubo-cloud-console.png`;
@@ -23,23 +19,6 @@ const caseBtn =
   "absolute bottom-[30.5px] content-stretch flex items-center justify-center p-[16px] right-[12px] rounded-[6px] cursor-pointer";
 const caseBtnText =
   "[word-break:break-word] flex flex-col font-['Syne'] font-bold justify-center leading-[0] relative shrink-0 text-[#ff5c3a] text-[14px] text-center tracking-[0.14px] whitespace-nowrap";
-
-function BrowserWindow({ src, shotH, className }: { src: string; shotH: number; className?: string }) {
-  return (
-    <div
-      className={`pointer-events-none absolute overflow-hidden rounded-[12px] border border-white/10 bg-[#0e0e0e] shadow-[0_20px_50px_rgba(0,0,0,0.6)] ${className || ""}`}
-    >
-      <div className="flex h-[26px] items-center gap-[7px] bg-[#1b1b1b] px-[12px]">
-        <span className="size-[9px] rounded-full bg-[#ff5f57]" />
-        <span className="size-[9px] rounded-full bg-[#febc2e]" />
-        <span className="size-[9px] rounded-full bg-[#28c840]" />
-      </div>
-      <div className="overflow-hidden" style={{ height: shotH }}>
-        <img alt="Blockscope explorer screen" src={src} className="block w-full object-cover object-top" />
-      </div>
-    </div>
-  );
-}
 
 function Work5({ className }: { className?: string }) {
   return (
@@ -59,11 +38,11 @@ function Work5({ className }: { className?: string }) {
         <div className={caseBtn} data-node-id="1:215"><div className={caseBtnText}><p className="leading-[1.45]">View Case Study →</p></div></div>
       </div>
       <div className="-translate-x-1/2 absolute h-[476px] left-1/2 overflow-clip top-[-0.5px] w-[554px]" data-node-id="1:217">
-        <div className="absolute inset-0 bg-[radial-gradient(120%_120%_at_50%_0%,#191428_0%,#100e18_45%,#0a0a0c_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(55%_60%_at_50%_48%,rgba(139,92,246,0.20),transparent_65%)]" />
-        <BrowserWindow src={imgW3Features} shotH={150} className="left-[-6px] top-[40px] z-[1] w-[372px] -rotate-[6deg] brightness-[.72]" />
-        <BrowserWindow src={imgW3Networks} shotH={150} className="right-[-6px] top-[40px] z-[2] w-[372px] rotate-[6deg] brightness-[.8]" />
-        <BrowserWindow src={imgW3Hero} shotH={250} className="left-1/2 top-[168px] z-[3] w-[452px] -translate-x-1/2" />
+        <img
+          alt="Whizrolls — landing page screens"
+          className="pointer-events-none absolute inset-0 size-full object-cover"
+          src={imgW3Showcase}
+        />
       </div>
     </a>
   );
@@ -88,11 +67,11 @@ function Work4({ className }: { className?: string }) {
         <div className={caseBtn} data-node-id="1:180"><div className={caseBtnText}><p className="leading-[1.45]">View Case Study →</p></div></div>
       </div>
       <div className="-translate-x-1/2 absolute h-[476px] left-1/2 overflow-clip top-[-0.5px] w-[554px]" data-node-id="1:182">
-        <div className="absolute inset-0 bg-[radial-gradient(120%_120%_at_50%_0%,#12181a_0%,#0d1012_45%,#0a0a0c_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(55%_60%_at_50%_48%,rgba(45,212,140,0.16),transparent_65%)]" />
-        <BrowserWindow src={imgBlkTxns} shotH={150} className="left-[-6px] top-[40px] z-[1] w-[372px] -rotate-[6deg] brightness-[.72]" />
-        <BrowserWindow src={imgBlkL2L1} shotH={150} className="right-[-6px] top-[40px] z-[2] w-[372px] rotate-[6deg] brightness-[.8]" />
-        <BrowserWindow src={imgBlkDetail} shotH={250} className="left-1/2 top-[168px] z-[3] w-[452px] -translate-x-1/2" />
+        <img
+          alt="Blockscope — explorer screens"
+          className="pointer-events-none absolute inset-0 size-full object-cover"
+          src={imgBlkShowcase}
+        />
       </div>
     </a>
   );
