@@ -175,7 +175,7 @@ export default function MedicalApp() {
             insights, user flows were mapped, wireframes created, and prototypes tested with real users — an iterative process that
             met both user expectations and healthcare usability standards.
           </p>
-          <div className="relative mt-[10px] h-[300px] w-full rounded-[12px] border border-[#232323] border-solid bg-[#0f0f0f]">
+          <div className="relative mt-[10px] h-[300px] w-[1160px] rounded-[12px] border border-[#232323] border-solid bg-[#0f0f0f]">
             {steps.map((s, i) => {
               const left = `${((i + 0.5) / steps.length) * 100}%`;
               return (
