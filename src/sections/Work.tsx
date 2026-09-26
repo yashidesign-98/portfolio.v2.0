@@ -6,12 +6,8 @@ const imgW3Networks = `${assetPathPrefix}/w3-networks.png`;
 const imgBlkDetail = `${assetPathPrefix}/blk-detail.png`;
 const imgBlkTxns = `${assetPathPrefix}/blk-txns.png`;
 const imgBlkL2L1 = `${assetPathPrefix}/blk-l2l1.png`;
-const imgFitHome = `${assetPathPrefix}/fit-home.png`;
-const imgFitInsights = `${assetPathPrefix}/fit-insights.png`;
-const imgFitWorkout = `${assetPathPrefix}/fit-workout.png`;
-const imgMedHome = `${assetPathPrefix}/med-home.png`;
-const imgMedDoctors = `${assetPathPrefix}/med-doctors.png`;
-const imgMedNotifications = `${assetPathPrefix}/med-notifications.png`;
+const imgFitShowcase = `${assetPathPrefix}/fit-showcase.png`;
+const imgMedShowcase = `${assetPathPrefix}/med-showcase.png`;
 const imgNuboConsole = `${assetPathPrefix}/nubo-cloud-console.png`;
 const imgVector = `${assetPathPrefix}/15d72.svg`;
 
@@ -120,22 +116,10 @@ function Work3({ className }: { className?: string }) {
         <div className={caseBtn} data-node-id="1:145"><div className={caseBtnText}><p className="leading-[1.45]">View Case Study →</p></div></div>
       </div>
       <div className="-translate-x-1/2 absolute h-[476px] left-1/2 overflow-clip top-[-0.5px] w-[554px]" data-node-id="1:147">
-        <div className="absolute inset-0 bg-[radial-gradient(120%_120%_at_50%_0%,#161b24_0%,#0e1015_45%,#0a0a0c_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(55%_60%_at_50%_45%,rgba(255,92,58,0.16),transparent_65%)]" />
         <img
-          alt="ZenFit — workout categories screen"
-          className="pointer-events-none absolute left-[-30px] top-[78px] h-[368px] w-auto -rotate-[9deg] rounded-[22px] border border-white/10 drop-shadow-[0_16px_40px_rgba(0,0,0,0.6)]"
-          src={imgFitWorkout}
-        />
-        <img
-          alt="ZenFit — insights screen"
-          className="pointer-events-none absolute right-[-30px] top-[78px] h-[368px] w-auto rotate-[9deg] rounded-[22px] border border-white/10 drop-shadow-[0_16px_40px_rgba(0,0,0,0.6)]"
-          src={imgFitInsights}
-        />
-        <img
-          alt="ZenFit — home screen"
-          className="pointer-events-none absolute left-1/2 top-[28px] h-[446px] w-auto -translate-x-1/2 rounded-[26px] border border-white/10 drop-shadow-[0_22px_55px_rgba(0,0,0,0.7)]"
-          src={imgFitHome}
+          alt="ZenFit — app screens"
+          className="pointer-events-none absolute inset-0 size-full object-cover"
+          src={imgFitShowcase}
         />
       </div>
     </a>
@@ -159,22 +143,10 @@ function Work2({ className }: { className?: string }) {
         <div className={caseBtn} data-node-id="1:112"><div className={caseBtnText}><p className="leading-[1.45]">View Case Study →</p></div></div>
       </div>
       <div className="absolute h-[473px] left-[-1px] overflow-clip top-[-1px] w-[554px]" data-node-id="1:114">
-        <div className="absolute inset-0 bg-[radial-gradient(120%_120%_at_50%_0%,#1a1f2a_0%,#101216_45%,#0b0b0d_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(55%_60%_at_50%_45%,rgba(255,92,58,0.20),transparent_65%)]" />
         <img
-          alt="Cure First — notifications screen"
-          className="pointer-events-none absolute left-[-34px] top-[74px] h-[372px] w-auto -rotate-[9deg] drop-shadow-[0_16px_40px_rgba(0,0,0,0.5)]"
-          src={imgMedNotifications}
-        />
-        <img
-          alt="Cure First — doctors screen"
-          className="pointer-events-none absolute right-[-34px] top-[74px] h-[372px] w-auto rotate-[9deg] drop-shadow-[0_16px_40px_rgba(0,0,0,0.5)]"
-          src={imgMedDoctors}
-        />
-        <img
-          alt="Cure First — home screen"
-          className="pointer-events-none absolute left-1/2 top-[26px] h-[452px] w-auto -translate-x-1/2 drop-shadow-[0_22px_55px_rgba(0,0,0,0.6)]"
-          src={imgMedHome}
+          alt="Cure First — app screens"
+          className="pointer-events-none absolute inset-0 size-full object-cover"
+          src={imgMedShowcase}
         />
       </div>
     </a>

@@ -65,7 +65,9 @@ export default function Header() {
       </nav>
       <div className="flex flex-wrap gap-[24px] items-center shrink-0" data-node-id="1:7742">
         <a
-          href="mailto:bhatnagar2898@gmail.com"
+          href="https://www.linkedin.com/in/yashi-bhatnagar/"
+          target="_blank"
+          rel="noopener noreferrer"
           className="bg-[#ff5c3a] flex items-center justify-center px-[16px] py-[12px] rounded-[12px] shrink-0 cursor-pointer transition-transform hover:-translate-y-0.5"
         >
           <div className="font-['Syne'] font-medium text-[16px] text-center text-white tracking-[-0.08px] whitespace-nowrap">

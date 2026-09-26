@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import AccentMask from "../components/AccentMask";
 
 const imgCounter = "/assets/15d72.svg";
+const imgMedHeroPreview = "/assets/med-hero-preview.png";
 
 // Medical App case study ("Cure First"). Shares the app chrome via App and
 // renders inside the scaled 1980px canvas. App screenshots are represented as
@@ -28,12 +29,13 @@ const results = [
   { n: "04", d: "Ensured usability through iterative prototyping and real-user feedback, striking the right balance between ease of navigation and the trust users expect from healthcare platforms." },
 ];
 
+// Damped zig-zag heights (px from container top) matching the Figma process board.
 const steps = [
-  { label: "User Journey Flows", above: true },
-  { label: "Define Key Scenarios", above: false },
-  { label: "High-Fidelity Screens", above: true },
-  { label: "Prototyping", above: false },
-  { label: "Testing", above: true },
+  { label: "User Journey Flows", top: 38 },
+  { label: "Define Key Scenarios", top: 206 },
+  { label: "High-Fidelity Screens", top: 74 },
+  { label: "Prototyping", top: 174 },
+  { label: "Testing", top: 120 },
 ];
 
 function Pill({ children }: { children: ReactNode }) {
@@ -68,13 +70,14 @@ function SectionHead({ n, label, center = false }: { n: number; label: string; c
 const heading = "font-['Syne'] font-bold text-white text-[40px] tracking-[1px]";
 const body = "font-['Syne'] font-normal text-[#7d8590] text-[18px] leading-[1.6] tracking-[0.18px]";
 
-function Phone() {
-  return (
-    <div className="relative aspect-[9/19] overflow-hidden rounded-[14px] bg-white shadow-[0_8px_24px_rgba(0,0,0,0.45)]">
-      <div className="absolute left-1/2 top-[6px] h-[4px] w-[26px] -translate-x-1/2 rounded-full bg-[#e5e5e5]" />
-    </div>
-  );
-}
+// Ordered to match the Figma "User interface" board: splash → onboarding →
+// home/profile → info pages → appointment & chat flows → doctor lists.
+const uiOrder = [
+  6, 7, 8, 9, 10, 11, 19, 1, 16, 12,
+  18, 2, 20, 13, 22, 25, 26, 27, 28, 21,
+  17, 23, 24, 3, 14, 15, 5, 4,
+];
+const uiScreens = uiOrder.map((n) => `/assets/med-ux-${String(n).padStart(2, "0")}.png`);
 
 export default function MedicalApp() {
   return (
@@ -98,15 +101,8 @@ export default function MedicalApp() {
             </p>
           </div>
           {/* App preview */}
-          <div className="relative h-[460px] w-[720px] shrink-0 overflow-hidden rounded-[16px] border border-[#232323]" style={{ background: "radial-gradient(circle at 70% 35%, rgba(255,92,58,0.22), #0f0f0f 62%)" }}>
-            <div className="absolute left-[26%] top-1/2 flex h-[300px] w-[150px] -translate-y-1/2 flex-col items-center justify-center gap-[10px] rounded-[22px] bg-white shadow-[0_16px_40px_rgba(0,0,0,0.5)]">
-              <span className="text-[#ff5c3a] text-[30px]">✦</span>
-              <span className="font-['Syne'] font-bold text-[#ff5c3a] text-[15px]">Cure First</span>
-            </div>
-            <div className="absolute left-[46%] top-1/2 flex h-[350px] w-[172px] -translate-y-1/2 flex-col items-center justify-center gap-[12px] rounded-[26px] bg-[#ff5c3a] shadow-[0_20px_50px_rgba(255,92,58,0.35)]">
-              <span className="text-white text-[38px]">✦</span>
-              <span className="font-['Syne'] font-bold text-white text-[18px]">Cure First</span>
-            </div>
+          <div className="w-[720px] shrink-0 overflow-hidden rounded-[16px] border border-[#232323]">
+            <img src={imgMedHeroPreview} alt="Cure First splash screens" className="block h-auto w-full" />
           </div>
         </section>
 
@@ -185,12 +181,12 @@ export default function MedicalApp() {
               return (
                 <div key={s.label}>
                   <div
-                    className="absolute bottom-[54px] top-[44px] w-0 border-l border-dashed"
-                    style={{ left, borderColor: i % 2 === 0 ? "#ff5c3a" : "#3a3a3a" }}
+                    className="absolute bottom-[52px] top-[26px] w-0 border-l border-dashed"
+                    style={{ left, borderColor: "rgba(255,92,58,0.55)" }}
                   />
                   <div
                     className="absolute -translate-x-1/2 whitespace-nowrap rounded-[8px] border border-[#3a3a3a] border-solid bg-[#1a1a1a] px-[16px] py-[9px] font-['Syne'] text-[14px] text-white"
-                    style={{ left, top: s.above ? "66px" : "180px" }}
+                    style={{ left, top: s.top }}
                   >
                     {s.label}
                   </div>
@@ -224,8 +220,13 @@ export default function MedicalApp() {
             </p>
           </div>
           <div className="mt-[10px] grid grid-cols-10 gap-[14px]">
-            {Array.from({ length: 28 }).map((_, i) => (
-              <Phone key={i} />
+            {uiScreens.map((src, i) => (
+              <img
+                key={src}
+                src={src}
+                alt={`Cure First screen ${i + 1}`}
+                className={`block h-auto w-full drop-shadow-[0_8px_24px_rgba(0,0,0,0.45)] ${i === 20 ? "col-start-2" : ""}`}
+              />
             ))}
           </div>
         </section>
