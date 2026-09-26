@@ -129,15 +129,15 @@ export default function App() {
             className="pointer-events-none absolute left-0 top-0 w-[1980px] select-none"
           />
 
-          {route === "case-study" ? (
+          {route === "public-cloud-experience" ? (
             <CaseStudy />
-          ) : route === "case-medical" ? (
+          ) : route === "medical-app-experience" ? (
             <MedicalApp />
-          ) : route === "case-block" ? (
+          ) : route === "block-explorer" ? (
             <BlockExplorer />
-          ) : route === "case-web3" ? (
+          ) : route === "web3-landing-page" ? (
             <Web3Website />
-          ) : route === "case-fitness" ? (
+          ) : route === "fitness-app-experience" ? (
             <FitnessApp />
           ) : (
             <div className="relative z-0 flex w-[1980px] flex-col items-center gap-[60px] pt-[124px] pb-[88px]">

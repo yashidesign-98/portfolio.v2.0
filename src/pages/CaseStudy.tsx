@@ -278,8 +278,13 @@ export default function CaseStudy() {
           <SectionHead n={7} label="Design - Screens" />
           <h2 className={heading}>A closer look</h2>
           <div className="grid grid-cols-3 gap-[24px]">
-            {[1, 2, 3, 4, 5, 6].map((n) => (
-              <Placeholder key={n} label={`screen 0${n}`} className="h-[300px]" />
+            {Array.from({ length: 11 }, (_, i) => `/assets/cloud-ui-${String(i + 1).padStart(2, "0")}.png`).map((src, i) => (
+              <img
+                key={src}
+                src={src}
+                alt={`Nubo Cloud screen ${i + 1}`}
+                className="h-auto w-full self-start rounded-[12px] border border-[#292929] border-solid shadow-[0_12px_40px_rgba(0,0,0,0.5)]"
+              />
             ))}
           </div>
         </section>

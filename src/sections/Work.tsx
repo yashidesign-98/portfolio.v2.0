@@ -22,7 +22,7 @@ const caseBtnText =
 
 function Work5({ className }: { className?: string }) {
   return (
-    <a href="#case-web3" className={`${className || cardBase} block cursor-pointer`} data-node-id="1:204">
+    <a href="#web3-landing-page" className={`${className || cardBase} block cursor-pointer`} data-node-id="1:204">
       <div className="absolute bg-[#1a1a1a] bottom-[-2px] h-[299px] left-[-1px] overflow-clip w-[554px]" data-node-id="1:205">
         <div className={cardTitle} data-node-id="1:206">
           <p className="leading-[1.45]">Web3 Website</p>
@@ -50,7 +50,7 @@ function Work5({ className }: { className?: string }) {
 
 function Work4({ className }: { className?: string }) {
   return (
-    <a href="#case-block" className={`${className || cardBase} block cursor-pointer`} data-node-id="1:167">
+    <a href="#block-explorer" className={`${className || cardBase} block cursor-pointer`} data-node-id="1:167">
       <div className="absolute bg-[#1a1a1a] bottom-[-2px] h-[299px] left-[-1px] overflow-clip w-[554px]" data-node-id="1:168">
         <div className={cardTitle} data-node-id="1:169">
           <p className="leading-[1.45]">Block Explorer</p>
@@ -79,7 +79,7 @@ function Work4({ className }: { className?: string }) {
 
 function Work3({ className }: { className?: string }) {
   return (
-    <a href="#case-fitness" className={`${className || cardBase} block cursor-pointer`} data-node-id="1:134">
+    <a href="#fitness-app-experience" className={`${className || cardBase} block cursor-pointer`} data-node-id="1:134">
       <div className="absolute bg-[#1a1a1a] bottom-[-2px] h-[299px] left-[-1px] overflow-clip w-[554px]" data-node-id="1:135">
         <div className={cardTitle} data-node-id="1:136">
           <p className="leading-[1.45]">Fitness App</p>
@@ -107,7 +107,7 @@ function Work3({ className }: { className?: string }) {
 
 function Work2({ className }: { className?: string }) {
   return (
-    <a href="#case-medical" className={`${className || cardBase} block cursor-pointer`} data-node-id="1:103">
+    <a href="#medical-app-experience" className={`${className || cardBase} block cursor-pointer`} data-node-id="1:103">
       <div className="absolute bg-[#1a1a1a] bottom-[-1px] h-[299px] left-[-1px] overflow-clip w-[554px]" data-node-id="1:104">
         <div className={cardTitle} data-node-id="1:105">
           <p className="leading-[1.45]">Medical App</p>
@@ -134,7 +134,7 @@ function Work2({ className }: { className?: string }) {
 
 function Work1({ className }: { className?: string }) {
   return (
-    <a href="#case-study" className={`${className || "bg-[#1a1a1a] border-2 border-transparent border-solid h-[772px] overflow-clip relative rounded-[10px] w-[1154px] transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#ff5c3a] hover:shadow-[0_12px_40px_0_rgba(255,92,58,0.25)]"} block cursor-pointer`} data-node-id="1:64">
+    <a href="#public-cloud-experience" className={`${className || "bg-[#1a1a1a] border-2 border-transparent border-solid h-[772px] overflow-clip relative rounded-[10px] w-[1154px] transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#ff5c3a] hover:shadow-[0_12px_40px_0_rgba(255,92,58,0.25)]"} block cursor-pointer`} data-node-id="1:64">
       <div className="absolute h-[473px] left-[-2px] overflow-clip top-[-2px] w-[1153px]" data-node-id="1:65">
         <img
           alt="Nubo Cloud console"
