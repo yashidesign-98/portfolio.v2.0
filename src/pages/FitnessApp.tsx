@@ -1,4 +1,4 @@
-import type { CSSProperties, ReactNode } from "react";
+import type { ReactNode } from "react";
 
 // Case study page — "ZenFit — Fitness App Experience". Shares the app chrome
 // (header, sidebar, scrubber) via App; rendered inside the same scaled 1980px
@@ -18,21 +18,9 @@ const stats = [
   { n: "22%", d: "improvement in workout consistency" },
 ];
 
-const topRow = [
-  { h: 560, mt: 40 },
-  { h: 640, mt: 0, hi: true },
-  { h: 540, mt: 50 },
-  { h: 600, mt: 15 },
-  { h: 560, mt: 45 },
-];
-
-const bottomRow = [
-  { h: 600, mt: 0 },
-  { h: 560, mt: 55 },
-  { h: 600, mt: 25 },
-  { h: 540, mt: 65 },
-  { h: 600, mt: 5 },
-];
+const uiScreens = Array.from({ length: 11 }, (_, i) => `/assets/fit-ui-${String(i + 1).padStart(2, "0")}.png`);
+const topOffsets = [40, 0, 50, 15, 45, 20];
+const bottomOffsets = [0, 55, 25, 65, 5];
 
 const font = "font-['Syne']";
 const body = `${font} font-normal text-[#7d8590] text-[18px] leading-[1.6] tracking-[0.18px]`;
@@ -56,31 +44,6 @@ function SectionPill({ children }: { children: ReactNode }) {
   );
 }
 
-function Screen({
-  label,
-  className = "",
-  style,
-  highlighted = false,
-}: {
-  label?: string;
-  className?: string;
-  style?: CSSProperties;
-  highlighted?: boolean;
-}) {
-  return (
-    <div
-      style={style}
-      className={`flex items-center justify-center rounded-[24px] border border-solid px-[16px] text-center font-mono text-[13px] ${
-        highlighted
-          ? "border-[#ff5c3a] bg-gradient-to-b from-[#2a1109] to-[#160a06] text-[#7a5a4a] shadow-[0_0_40px_0_rgba(255,92,58,0.2)]"
-          : "border-[#23262d] bg-[#16181d] text-[#4a4d55]"
-      } ${className}`}
-    >
-      {label ? `[ ${label} ]` : ""}
-    </div>
-  );
-}
-
 export default function FitnessApp() {
   return (
     <div className="relative z-0 w-[1980px] pb-[120px] pt-[180px]">
@@ -100,8 +63,16 @@ export default function FitnessApp() {
         </p>
 
         <div className="mt-[30px] flex items-start justify-center gap-[36px]">
-          <Screen label="onboarding · strength" className="h-[500px] w-[290px]" />
-          <Screen label="onboarding · mindset" className="mt-[60px] h-[520px] w-[290px]" />
+          <img
+            src="/assets/fit-onboard-strength.png"
+            alt="ZenFit onboarding — Get Stronger for Preparation"
+            className="h-auto w-[290px] drop-shadow-[0_16px_40px_rgba(0,0,0,0.5)]"
+          />
+          <img
+            src="/assets/fit-onboard-mindset.png"
+            alt="ZenFit onboarding — Build Your Mind and Body"
+            className="mt-[60px] h-auto w-[290px] drop-shadow-[0_16px_40px_rgba(0,0,0,0.5)]"
+          />
         </div>
 
         <h2 className={`${font} mt-[40px] max-w-[820px] font-bold text-white text-[38px] leading-[1.25] tracking-[0.5px]`}>
@@ -166,26 +137,29 @@ export default function FitnessApp() {
           </div>
 
           <div className="mt-[16px] flex flex-col gap-[28px]">
-            <div className="flex items-start gap-[28px]">
-              {topRow.map((p, i) => (
-                <Screen
-                  key={i}
-                  highlighted={p.hi}
-                  className="flex-1"
-                  style={{ height: p.h, marginTop: p.mt }}
+            <div className="flex items-start justify-center gap-[24px]">
+              {uiScreens.slice(0, 6).map((src, i) => (
+                <img
+                  key={src}
+                  src={src}
+                  alt={`ZenFit screen ${i + 1}`}
+                  className="h-auto w-[268px] shrink-0 drop-shadow-[0_16px_40px_rgba(0,0,0,0.55)]"
+                  style={{ marginTop: topOffsets[i] }}
                 />
               ))}
             </div>
-            <div className="flex items-start gap-[28px]">
-              {bottomRow.map((p, i) => (
-                <Screen key={i} className="flex-1" style={{ height: p.h, marginTop: p.mt }} />
+            <div className="flex items-start justify-center gap-[24px]">
+              {uiScreens.slice(6).map((src, i) => (
+                <img
+                  key={src}
+                  src={src}
+                  alt={`ZenFit screen ${i + 7}`}
+                  className="h-auto w-[268px] shrink-0 drop-shadow-[0_16px_40px_rgba(0,0,0,0.55)]"
+                  style={{ marginTop: bottomOffsets[i] }}
+                />
               ))}
             </div>
           </div>
-
-          <p className="mt-[20px] text-center font-mono text-[15px] text-[#5a5a5a]">
-            [ onboarding, auth, workout categories, plans &amp; insights screens ]
-          </p>
         </section>
 
         {/* Contact */}

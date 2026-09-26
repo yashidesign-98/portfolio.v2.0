@@ -149,8 +149,12 @@ export default function Web3Website() {
         {/* The page */}
         <section className="flex flex-col items-center gap-[44px]">
           <DashedPill className="text-[14px] uppercase tracking-[2px]">04 — the page</DashedPill>
-          <div className="flex h-[1100px] w-[820px] items-center justify-center rounded-[20px] border border-[#292929] border-solid bg-gradient-to-br from-[#1a1a1a] to-[#121212] px-[24px] text-center font-mono text-[16px] text-[#5a5a5a]">
-            [ Whizrolls landing page — full scroll capture ]
+          <div className="w-[820px] overflow-hidden rounded-[20px] border border-[#292929] border-solid">
+            <img
+              src="/assets/w3-full-page.png"
+              alt="Whizrolls landing page — full scroll capture"
+              className="block h-auto w-full"
+            />
           </div>
         </section>
 
