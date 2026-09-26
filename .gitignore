@@ -1,0 +1,15 @@
+node_modules
+dist
+dist-ssr
+*.local
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+
+# tooling / editor
+.claude/
+
+# build artifacts
+vite.config.js
+vite.config.d.ts
+*.tsbuildinfo

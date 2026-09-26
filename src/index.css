@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  /* Global accent — the sidebar colour tool rewrites these two at runtime, which
+     recolours every "orange" element via the overrides below. */
+  --accent: #ff5c3a;
+  --accent-rgb: 255, 92, 58;
+  --scrubber: #37e04b;
+}
+
+/* Remap the shared Tailwind "orange" arbitrary-value classes to the accent
+   variable, so changing --accent recolours the whole site. */
+.text-\[\#ff5c3a\] {
+  color: var(--accent) !important;
+}
+.bg-\[\#ff5c3a\] {
+  background-color: var(--accent) !important;
+}
+.border-\[\#ff5c3a\],
+.hover\:border-\[\#ff5c3a\]:hover {
+  border-color: var(--accent) !important;
+}
+.bg-\[rgba\(255\2c 92\2c 58\2c 0\.1\)\],
+.bg-\[rgba\(255\,92\,58\,0\.1\)\] {
+  background-color: rgba(var(--accent-rgb), 0.1) !important;
+}
+.bg-\[rgba\(255\,92\,58\,0\.2\)\] {
+  background-color: rgba(var(--accent-rgb), 0.2) !important;
+}
+.bg-\[rgba\(255\,92\,58\,0\.04\)\] {
+  background-color: rgba(var(--accent-rgb), 0.04) !important;
+}
+.border-\[rgba\(255\,92\,58\,0\.3\)\] {
+  border-color: rgba(var(--accent-rgb), 0.3) !important;
+}
+.shadow-\[0_12px_40px_0_rgba\(255\,92\,58\,0\.25\)\],
+.hover\:shadow-\[0_12px_40px_0_rgba\(255\,92\,58\,0\.25\)\]:hover {
+  box-shadow: 0 12px 40px 0 rgba(var(--accent-rgb), 0.25) !important;
+}
+.shadow-\[4px_4px_20px_0px_rgba\(255\,92\,58\,0\.2\)\] {
+  box-shadow: 4px 4px 20px 0px rgba(var(--accent-rgb), 0.2) !important;
+}
+.shadow-\[0_0_20px_0_rgba\(255\,92\,58\,0\.25\)\] {
+  box-shadow: 0 0 20px 0 rgba(var(--accent-rgb), 0.25) !important;
+}
+.shadow-\[0_0_12px_2px_rgba\(255\,92\,58\,0\.55\)\] {
+  box-shadow: 0 0 12px 2px rgba(var(--accent-rgb), 0.55) !important;
+}
+.shadow-\[0_0_8px_0_rgba\(255\,92\,58\,0\.5\)\] {
+  box-shadow: 0 0 8px 0 rgba(var(--accent-rgb), 0.5) !important;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #0d0d0d;
+  font-family: "Syne", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+}
+
+@layer utilities {
+  /* Figma Dev Mode codegen emits these non-standard helpers */
+  .content-stretch {
+    align-content: stretch;
+  }
+  .content-start {
+    align-content: flex-start;
+  }
+}
+
+/* Marching-ants borders: the dashed strip is wider than its frame, so a
+   continuous translate reads as marching. The stroke-dasharray is "24 24",
+   so one full dash period is 48px — the loop must translate by exactly that
+   (or a multiple) or it jumps on repeat. */
+@keyframes march-x {
+  to {
+    transform: translateX(-48px);
+  }
+}
+@keyframes march-x-rev {
+  to {
+    transform: translateX(48px);
+  }
+}
+.ants-x {
+  animation: march-x 1.5s linear infinite;
+}
+.ants-x-rev {
+  animation: march-x-rev 1.5s linear infinite;
+}
+
+/* Gentle float for the hero annotation badges. Uses the independent CSS
+   `translate` property (not `transform`) so it composes with the Tailwind
+   `-translate-x-1/2` transforms on the badges instead of overriding them. */
+@keyframes float-badge {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -6px;
+  }
+}
+.float-badge {
+  animation: float-badge 4s ease-in-out infinite;
+}
+
+/* Periodic wiggle for the grocery-list note. Uses the independent `rotate`
+   property so it stacks on top of the element's base `-rotate-[4deg]` transform.
+   Each 3s cycle wiggles briefly then rests; starts after a 1.5s delay. */
+@keyframes wiggle {
+  0%,
+  40%,
+  100% {
+    rotate: 0deg;
+  }
+  8% {
+    rotate: -6deg;
+  }
+  16% {
+    rotate: 5deg;
+  }
+  24% {
+    rotate: -4deg;
+  }
+  32% {
+    rotate: 3deg;
+  }
+}
+/* Tints a monochrome SVG to the current accent by using it as a mask. */
+.accent-mask {
+  background-color: var(--accent);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+/* ---- Sidebar tool overlays ---- */
+/* Doodle strokes hold, then fade out over their 2s life. */
+@keyframes doodle-fade {
+  0%,
+  55% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.doodle-stroke {
+  animation: doodle-fade 2s ease forwards;
+}
+/* Floating text boxes: glow in the accent colour, fade when leaving. */
+.tool-textbox {
+  background: rgba(13, 13, 13, 0.85);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  color: #fff;
+  padding: 8px 12px;
+  font-family: "Syne", sans-serif;
+  font-size: 20px;
+  outline: none;
+  box-shadow: 0 0 18px 2px rgba(var(--accent-rgb), 0.6);
+  text-shadow: 0 0 8px rgba(var(--accent-rgb), 0.8);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  animation: text-pop 0.25s ease both;
+}
+@keyframes text-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.tool-textbox.leaving {
+  opacity: 0;
+  transform: scale(0.9);
+}
+/* Element flashed by the search tool. */
+.search-hit {
+  animation: search-flash 2s ease forwards;
+  border-radius: 6px;
+}
+@keyframes search-flash {
+  0%,
+  70% {
+    box-shadow: 0 0 0 3px var(--accent), 0 0 22px 4px rgba(var(--accent-rgb), 0.55);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(var(--accent-rgb), 0);
+  }
+}
+
+.wiggle {
+  animation: wiggle 3s ease-in-out 1.5s infinite;
+  /* The page sits inside a CSS transform: scale() wrapper, so an animated
+     (composited) layer would otherwise be rasterized at 1x and look pixelated
+     on HiDPI screens. These hints force a full-resolution raster. */
+  will-change: transform;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
