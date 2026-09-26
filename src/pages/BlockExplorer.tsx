@@ -52,12 +52,12 @@ const research = [
 ];
 
 const heading = "font-['Syne'] font-bold text-white text-[40px] tracking-[1px]";
-const body = "font-['Syne'] font-normal text-[#7d8590] text-[18px] leading-[1.6] tracking-[0.18px]";
+const body = "font-['Syne'] font-normal text-[#7d8590] text-[20px] leading-[1.6] tracking-[0.18px]";
 
 // Small numbered section label, e.g. "01 - RESULTS".
 function SectionLabel({ n, label }: { n: string; label: string }) {
   return (
-    <div className="inline-flex w-fit items-center rounded-[6px] border border-[#ff5c3a] border-solid bg-black px-[16px] py-[6px] font-['Syne'] text-[13px] uppercase tracking-[1.6px] text-[#ff5c3a] shadow-[0_0_24px_0_rgba(255,92,58,0.25)]">
+    <div className="inline-flex w-fit items-center rounded-[6px] border border-[#ff5c3a] border-solid bg-black px-[16px] py-[6px] font-['Syne'] text-[18px] uppercase tracking-[1.6px] text-[#ff5c3a] shadow-[0_0_24px_0_rgba(255,92,58,0.25)]">
       {`${n} - ${label}`}
     </div>
   );
@@ -67,7 +67,7 @@ function BulletRow({ text }: { text: string }) {
   return (
     <div className="flex items-start gap-[12px]">
       <span className="mt-[3px] font-['Syne'] font-bold text-[#ff5c3a]">✦</span>
-      <p className="font-['Syne'] text-[16px] leading-[1.6] text-[#929292]">{text}</p>
+      <p className="font-['Syne'] text-[20px] leading-[1.6] text-[#929292]">{text}</p>
     </div>
   );
 }
@@ -79,8 +79,8 @@ function StatChip({ color, label, value }: { color: string; label: string; value
     <div className="flex items-center gap-[10px] rounded-[10px] bg-[#1c1c1c] px-[14px] py-[10px]">
       <span className="size-[26px] shrink-0 rounded-[7px]" style={{ background: color }} />
       <div className="flex flex-col leading-tight">
-        <span className="font-['Syne'] text-[10px] uppercase tracking-[0.5px] text-[#7d8590]">{label}</span>
-        <span className="font-['Syne'] font-bold text-[13px] text-white">{value}</span>
+        <span className="font-['Syne'] text-[18px] uppercase tracking-[0.5px] text-[#7d8590]">{label}</span>
+        <span className="font-['Syne'] font-bold text-[18px] text-white">{value}</span>
       </div>
     </div>
   );
@@ -110,7 +110,7 @@ function BlockscopeMock({ withFooter = false }: { withFooter?: boolean }) {
         {blockscopeTabs.map((t, i) => (
           <div
             key={t}
-            className={`pb-[14px] font-['Syne'] text-[14px] ${
+            className={`pb-[14px] font-['Syne'] text-[18px] ${
               i === 0 ? "border-b-2 border-[#ff5c3a] text-white" : "text-[#6b6b6b]"
             }`}
           >
@@ -122,9 +122,9 @@ function BlockscopeMock({ withFooter = false }: { withFooter?: boolean }) {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-[10px]">
             <span className="size-[26px] shrink-0 rounded-[6px]" style={{ background: GREEN }} />
-            <span className="font-['Syne'] font-bold text-[18px] text-white">Blockscope</span>
+            <span className="font-['Syne'] font-bold text-[20px] text-white">Blockscope</span>
           </div>
-          <div className="flex items-center gap-[24px] font-['Syne'] text-[13px] text-[#9a9a9a]">
+          <div className="flex items-center gap-[24px] font-['Syne'] text-[18px] text-[#9a9a9a]">
             <span>Blockchains</span>
             <span>Tokens</span>
             <span>Transactions</span>
@@ -137,15 +137,15 @@ function BlockscopeMock({ withFooter = false }: { withFooter?: boolean }) {
           <h3 className="font-['Syne'] font-bold text-[36px] leading-[1.15] text-white">
             An Ecosystem for Builders and Innovators
           </h3>
-          <p className="mt-[14px] font-['Syne'] text-[14px] leading-[1.6] text-[#9a9a9a]">
+          <p className="mt-[14px] font-['Syne'] text-[18px] leading-[1.6] text-[#9a9a9a]">
             The Mantle network is the first Ethereum layer 2 chain initiated by a DAO, BitDAO, seeding an ecosystem of
             projects for the Mantle network.
           </p>
           <div className="mt-[22px] flex items-center gap-[10px] rounded-[10px] border border-[#2a2a2a] border-solid bg-[#161616] px-[16px] py-[12px]">
             <span className="text-[#6b6b6b]">⌕</span>
-            <span className="font-['Syne'] text-[13px] text-[#6b6b6b]">Search Address, Transaction, Blocks</span>
+            <span className="font-['Syne'] text-[18px] text-[#6b6b6b]">Search Address, Transaction, Blocks</span>
           </div>
-          <div className="mt-[10px] font-['Syne'] text-[11px] text-[#5a5a5a]">
+          <div className="mt-[10px] font-['Syne'] text-[18px] text-[#5a5a5a]">
             Search example: ⬦ Token · ⬦ NFT · ⬦ Contract
           </div>
           <div className="mt-[20px] flex gap-[14px]">
@@ -161,8 +161,8 @@ function BlockscopeMock({ withFooter = false }: { withFooter?: boolean }) {
       {withFooter && (
         <div className="grid grid-cols-[1fr_360px] gap-[16px] bg-[#0d0d0d] px-[24px] py-[20px]">
           <div className="rounded-[10px] border border-[#1e1e1e] border-solid bg-[#141414] p-[16px]">
-            <div className="font-['Syne'] text-[12px] font-bold text-white">24h statistics</div>
-            <div className="mt-[4px] font-['Syne'] text-[11px] text-[#6b6b6b]">Transactions</div>
+            <div className="font-['Syne'] text-[18px] font-bold text-white">24h statistics</div>
+            <div className="mt-[4px] font-['Syne'] text-[18px] text-[#6b6b6b]">Transactions</div>
             <div className="mt-[10px] flex items-end gap-[4px]">
               {[40, 65, 35, 80, 55, 70, 45, 90, 60, 50].map((h, i) => (
                 <span key={i} className="w-[10px] rounded-t-[2px]" style={{ height: h, background: i % 2 ? GREEN : "#2a2a2a" }} />
@@ -170,8 +170,8 @@ function BlockscopeMock({ withFooter = false }: { withFooter?: boolean }) {
             </div>
           </div>
           <div className="flex flex-col justify-center rounded-[10px] border border-[#1e1e1e] border-solid bg-[#141414] p-[16px]">
-            <div className="font-['Syne'] text-[12px] font-bold text-white">Whitepaper</div>
-            <div className="mt-[4px] font-['Syne'] text-[11px] leading-[1.5] text-[#6b6b6b]">
+            <div className="font-['Syne'] text-[18px] font-bold text-white">Whitepaper</div>
+            <div className="mt-[4px] font-['Syne'] text-[18px] leading-[1.5] text-[#6b6b6b]">
               Read the full technical documentation for the Mantle network.
             </div>
           </div>
@@ -201,7 +201,7 @@ function Laptop({ children }: { children: ReactNode }) {
     <div className="mx-auto w-full">
       <div className="rounded-[18px] border border-[#2a2a2a] border-solid bg-[#0a0a0a] p-[16px]">{children}</div>
       <div className="mx-auto h-[16px] w-[108%] -translate-x-[4%] rounded-b-[12px] bg-gradient-to-b from-[#2c2c2c] to-[#1a1a1a]" />
-      <div className="mt-[10px] text-center font-['Syne'] text-[12px] text-[#6b6b6b]">MacBook Air</div>
+      <div className="mt-[10px] text-center font-['Syne'] text-[18px] text-[#6b6b6b]">MacBook Air</div>
     </div>
   );
 }
@@ -214,8 +214,8 @@ function ProcessStep({ icon, t, d }: { icon: string; t: string; d: string }) {
         {icon}
       </div>
       <div className="flex flex-col gap-[4px]">
-        <span className="font-['Syne'] font-bold text-[16px] text-white">{t}</span>
-        <span className="font-['Syne'] text-[13px] text-[#7d8590]">{d}</span>
+        <span className="font-['Syne'] font-bold text-[20px] text-white">{t}</span>
+        <span className="font-['Syne'] text-[18px] text-[#7d8590]">{d}</span>
       </div>
     </div>
   );
@@ -227,8 +227,8 @@ function PersonCard() {
       <div className="flex items-center gap-[14px]">
         <div className="size-[52px] shrink-0 rounded-full bg-[#2a2a2a]" />
         <div className="flex flex-col gap-[2px]">
-          <span className="font-['Syne'] font-bold text-[18px] text-white">Daniel Kim</span>
-          <span className="font-['Syne'] text-[13px] text-[#7d8590]">User Persona</span>
+          <span className="font-['Syne'] font-bold text-[20px] text-white">Daniel Kim</span>
+          <span className="font-['Syne'] text-[18px] text-[#7d8590]">User Persona</span>
         </div>
       </div>
       <div className="flex flex-col gap-[10px] pt-[6px]">
@@ -243,7 +243,7 @@ function PersonCard() {
 function ResearchRow({ t, d }: { t: string; d: string }) {
   return (
     <div className="border-t border-[#232323] border-solid py-[20px] first:border-t-0 first:pt-0">
-      <p className="font-['Syne'] text-[16px] leading-[1.6] text-[#c1c1c1]">
+      <p className="font-['Syne'] text-[20px] leading-[1.6] text-[#c1c1c1]">
         <span className="font-bold text-white">{t}: </span>
         <span className="text-[#929292]">{d}</span>
       </p>
@@ -257,7 +257,7 @@ export default function BlockExplorer() {
       <div className="mx-auto flex w-[1748px] flex-col gap-[130px]">
         {/* Hero — centered */}
         <section className="flex flex-col items-center gap-[26px] text-center">
-          <div className="inline-flex w-fit items-center gap-[11px] rounded-full border border-dashed border-[#5a5a5a] bg-black px-[26px] py-[13px] font-['Syne'] text-[18px] tracking-[0.3px] text-[#ff5c3a]">
+          <div className="inline-flex w-fit items-center gap-[11px] rounded-full border border-dashed border-[#5a5a5a] bg-black px-[26px] py-[13px] font-['Syne'] text-[20px] tracking-[0.3px] text-[#ff5c3a]">
             <span className="size-[10px] rounded-full bg-[#ff5c3a]" />
             case study — web3 / blockchain
           </div>
@@ -294,7 +294,7 @@ export default function BlockExplorer() {
           <SectionLabel n="01" label="Results" />
           <div className="flex flex-col gap-[6px]">
             <h2 className={heading}>Results</h2>
-            <span className="font-['Syne'] text-[14px] text-[#7d8590]">achieved with UX/UI improvements</span>
+            <span className="font-['Syne'] text-[18px] text-[#7d8590]">achieved with UX/UI improvements</span>
           </div>
           <div className="grid grid-cols-2 gap-x-[80px] gap-y-[22px]">
             {results.map((r) => (
@@ -317,7 +317,7 @@ export default function BlockExplorer() {
             <h2 className={heading}>
               What the stakeholders <span className="text-[#ff5c3a]">expected</span>
             </h2>
-            <span className="font-['Syne'] text-[14px] text-[#7d8590]">design challenges and objections</span>
+            <span className="font-['Syne'] text-[18px] text-[#7d8590]">design challenges and objections</span>
           </div>
           <div className="grid grid-cols-[1fr_720px] items-center gap-[70px]">
             <div className="flex flex-col gap-[22px]">
@@ -357,7 +357,7 @@ export default function BlockExplorer() {
             <h2 className={heading}>
               Primary <span className="text-[#ff5c3a]">Research</span>
             </h2>
-            <span className="font-['Syne'] text-[14px] text-[#7d8590]">what's behind the design solutions?</span>
+            <span className="font-['Syne'] text-[18px] text-[#7d8590]">what's behind the design solutions?</span>
           </div>
           <div className="grid w-full grid-cols-[400px_1fr] gap-[70px]">
             <PersonCard />
@@ -376,7 +376,7 @@ export default function BlockExplorer() {
             <h2 className={heading}>
               User <span className="text-[#ff5c3a]">Interface</span>
             </h2>
-            <span className="font-['Syne'] text-[14px] text-[#7d8590]">design & prototype solution</span>
+            <span className="font-['Syne'] text-[18px] text-[#7d8590]">design & prototype solution</span>
           </div>
           <div className="grid grid-cols-2 gap-[70px]">
             <p className={body}>
@@ -406,15 +406,15 @@ export default function BlockExplorer() {
         {/* CTA */}
         <section className="flex flex-col items-center gap-[20px] rounded-[16px] border border-[#292929] border-solid bg-[#0f0f0f] px-[40px] py-[70px] text-center">
           <h2 className="font-['Syne'] font-bold text-white text-[40px] tracking-[1px]">Let's talk about your project</h2>
-          <p className="font-['Syne'] text-[18px] text-[#7d8590]">Open to full-time roles, freelance collaboration, and design consulting.</p>
+          <p className="font-['Syne'] text-[20px] text-[#7d8590]">Open to full-time roles, freelance collaboration, and design consulting.</p>
           <div className="mt-[8px] flex items-center gap-[16px]">
             <input
               placeholder="Enter your email address"
-              className="w-[360px] rounded-full border border-[#343434] bg-[#0d0d0d] px-[22px] py-[14px] font-['Syne'] text-[16px] text-white outline-none placeholder:text-[#5a5a5a] focus:border-[#ff5c3a]"
+              className="w-[360px] rounded-full border border-[#343434] bg-[#0d0d0d] px-[22px] py-[14px] font-['Syne'] text-[20px] text-white outline-none placeholder:text-[#5a5a5a] focus:border-[#ff5c3a]"
             />
             <a
               href="mailto:bhatnagar2898@gmail.com"
-              className="flex items-center gap-[8px] rounded-full bg-[#ff5c3a] px-[28px] py-[14px] font-['Syne'] font-bold text-[16px] text-white transition-transform hover:-translate-y-0.5"
+              className="flex items-center gap-[8px] rounded-full bg-[#ff5c3a] px-[28px] py-[14px] font-['Syne'] font-bold text-[20px] text-white transition-transform hover:-translate-y-0.5"
             >
               Send Invite →
             </a>

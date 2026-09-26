@@ -27,8 +27,8 @@ const keySections = [
 ];
 
 const serif = "font-['Syne']";
-const body = "font-['Syne'] font-normal text-[#7d8590] text-[18px] leading-[1.6] tracking-[0.18px]";
-const label = "font-['Syne'] text-[14px] uppercase tracking-[3px] text-[#6b7280]";
+const body = "font-['Syne'] font-normal text-[#7d8590] text-[20px] leading-[1.6] tracking-[0.18px]";
+const label = "font-['Syne'] text-[18px] uppercase tracking-[3px] text-[#6b7280]";
 const cardBase = "rounded-[12px] border border-[#292929] border-solid bg-[#141414] p-[28px]";
 
 function Dot({ className = "" }: { className?: string }) {
@@ -42,7 +42,7 @@ function Dot({ className = "" }: { className?: string }) {
 function DashedPill({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
     <div
-      className={`inline-flex w-fit items-center gap-[11px] rounded-full border border-dashed border-[#5a5a5a] bg-black px-[26px] py-[13px] font-['Syne'] text-[16px] tracking-[0.3px] text-[#ff5c3a] ${className}`}
+      className={`inline-flex w-fit items-center gap-[11px] rounded-full border border-dashed border-[#5a5a5a] bg-black px-[26px] py-[13px] font-['Syne'] text-[20px] tracking-[0.3px] text-[#ff5c3a] ${className}`}
     >
       <span className="size-[10px] rounded-full bg-[#ff5c3a]" />
       {children}
@@ -87,7 +87,7 @@ export default function Web3Website() {
                 <span className={label}>01 — Problems &amp; Challenges</span>
                 <div className="flex flex-col gap-[14px]">
                   {problems.map((p) => (
-                    <p key={p} className="font-['Syne'] text-[18px] leading-[1.5] text-[#c1c1c1]">
+                    <p key={p} className="font-['Syne'] text-[20px] leading-[1.5] text-[#c1c1c1]">
                       {p}
                     </p>
                   ))}
@@ -140,7 +140,7 @@ export default function Web3Website() {
             {keySections.map((k) => (
               <div key={k.t} className={cardBase}>
                 <div className="font-['Syne'] font-bold text-white text-[20px]">{k.t}</div>
-                <p className="mt-[10px] font-['Syne'] text-[16px] leading-[1.6] text-[#929292]">{k.d}</p>
+                <p className="mt-[10px] font-['Syne'] text-[20px] leading-[1.6] text-[#929292]">{k.d}</p>
               </div>
             ))}
           </div>
@@ -148,7 +148,7 @@ export default function Web3Website() {
 
         {/* The page */}
         <section className="flex flex-col items-center gap-[44px]">
-          <DashedPill className="text-[14px] uppercase tracking-[2px]">04 — the page</DashedPill>
+          <DashedPill className="text-[18px] uppercase tracking-[2px]">04 — the page</DashedPill>
           <div className="w-[820px] overflow-hidden rounded-[20px] border border-[#292929] border-solid">
             <img
               src="/assets/w3-full-page.png"

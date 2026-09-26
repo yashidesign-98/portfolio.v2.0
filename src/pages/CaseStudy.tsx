@@ -69,7 +69,7 @@ const impact = [
 
 function Pill({ children }: { children: ReactNode }) {
   return (
-    <div className="inline-flex w-fit items-center rounded-[6px] border border-[#ff5c3a] border-solid bg-black px-[16px] py-[6px] font-['Syne'] text-[13px] uppercase tracking-[1.6px] text-[#ff5c3a] shadow-[0_0_24px_0_rgba(255,92,58,0.25)]">
+    <div className="inline-flex w-fit items-center rounded-[6px] border border-[#ff5c3a] border-solid bg-black px-[16px] py-[6px] font-['Syne'] text-[18px] uppercase tracking-[1.6px] text-[#ff5c3a] shadow-[0_0_24px_0_rgba(255,92,58,0.25)]">
       {children}
     </div>
   );
@@ -80,7 +80,7 @@ function Counter({ n }: { n: number }) {
   return (
     <div className="relative size-[40px] shrink-0">
       <AccentMask src={imgCounter} className="absolute inset-0 size-full" stretch />
-      <span className="absolute inset-0 flex items-center justify-center font-['Syne'] font-bold text-[18px] leading-none text-white">
+      <span className="absolute inset-0 flex items-center justify-center font-['Syne'] font-bold text-[20px] leading-none text-white">
         {n}
       </span>
     </div>
@@ -98,10 +98,10 @@ function SectionHead({ n, label }: { n: number; label: string }) {
 }
 
 const heading = "font-['Syne'] font-bold text-white text-[40px] tracking-[1px]";
-const body = "font-['Syne'] font-normal text-[#7d8590] text-[18px] leading-[1.6] tracking-[0.18px]";
+const body = "font-['Syne'] font-normal text-[#7d8590] text-[20px] leading-[1.6] tracking-[0.18px]";
 const cardBase = "rounded-[12px] border border-[#292929] border-solid bg-[#141414] p-[28px]";
 const cardTitle = "font-['Syne'] font-bold text-white text-[20px]";
-const cardDesc = "font-['Syne'] text-[15px] leading-[1.6] text-[#929292]";
+const cardDesc = "font-['Syne'] text-[18px] leading-[1.6] text-[#929292]";
 
 export default function CaseStudy() {
   return (
@@ -109,7 +109,7 @@ export default function CaseStudy() {
       <div className="mx-auto flex w-[1748px] flex-col gap-[120px]">
         {/* Hero */}
         <section className="flex flex-col gap-[28px]">
-          <div className="inline-flex w-fit items-center gap-[11px] rounded-full border border-dashed border-[#5a5a5a] bg-black px-[26px] py-[13px] font-['Syne'] text-[18px] tracking-[0.3px] text-[#ff5c3a]">
+          <div className="inline-flex w-fit items-center gap-[11px] rounded-full border border-dashed border-[#5a5a5a] bg-black px-[26px] py-[13px] font-['Syne'] text-[20px] tracking-[0.3px] text-[#ff5c3a]">
             <span className="size-[10px] rounded-full bg-[#ff5c3a]" />
             case study - public cloud
           </div>
@@ -125,7 +125,7 @@ export default function CaseStudy() {
           </p>
           <div className="flex flex-wrap gap-[14px]">
             {tags.map((t) => (
-              <div key={t} className="rounded-full border border-[#3a3a3a] border-solid px-[18px] py-[8px] font-['Syne'] text-[14px] text-[#c1c1c1]">
+              <div key={t} className="rounded-full border border-[#3a3a3a] border-solid px-[18px] py-[8px] font-['Syne'] text-[18px] text-[#c1c1c1]">
                 {t}
               </div>
             ))}
@@ -149,11 +149,11 @@ export default function CaseStudy() {
                 quota management — into an intuitive and streamlined experience.
               </p>
               <div className="flex flex-col gap-[16px] pt-[8px]">
-                <span className="font-['Syne'] text-[13px] uppercase tracking-[1.6px] text-[#7d8590]">The design delivers</span>
+                <span className="font-['Syne'] text-[18px] uppercase tracking-[1.6px] text-[#7d8590]">The design delivers</span>
                 {overviewBullets.map((b) => (
                   <div key={b.lead} className="flex items-start gap-[12px]">
                     <span className="mt-[3px] font-['Syne'] font-bold text-[#ff5c3a]">✦</span>
-                    <span className="font-['Syne'] text-[18px] text-[#c1c1c1]">
+                    <span className="font-['Syne'] text-[20px] text-[#c1c1c1]">
                       <span className="font-bold text-white">{b.lead}</span>
                       {b.rest}
                     </span>
@@ -312,15 +312,15 @@ export default function CaseStudy() {
         {/* CTA */}
         <section className="flex flex-col items-center gap-[20px] rounded-[16px] border border-[#292929] border-solid bg-[#0f0f0f] px-[40px] py-[70px] text-center">
           <h2 className="font-['Syne'] font-bold text-white text-[40px] tracking-[1px]">Invite Yashi to your project</h2>
-          <p className="font-['Syne'] text-[18px] text-[#7d8590]">Open to full-time roles, freelance collaboration, and design consulting.</p>
+          <p className="font-['Syne'] text-[20px] text-[#7d8590]">Open to full-time roles, freelance collaboration, and design consulting.</p>
           <div className="mt-[8px] flex items-center gap-[16px]">
             <input
               placeholder="Enter your email address"
-              className="w-[360px] rounded-full border border-[#343434] bg-[#0d0d0d] px-[22px] py-[14px] font-['Syne'] text-[16px] text-white outline-none placeholder:text-[#5a5a5a] focus:border-[#ff5c3a]"
+              className="w-[360px] rounded-full border border-[#343434] bg-[#0d0d0d] px-[22px] py-[14px] font-['Syne'] text-[20px] text-white outline-none placeholder:text-[#5a5a5a] focus:border-[#ff5c3a]"
             />
             <a
               href="mailto:bhatnagar2898@gmail.com"
-              className="flex items-center gap-[8px] rounded-full bg-[#ff5c3a] px-[28px] py-[14px] font-['Syne'] font-bold text-[16px] text-white transition-transform hover:-translate-y-0.5"
+              className="flex items-center gap-[8px] rounded-full bg-[#ff5c3a] px-[28px] py-[14px] font-['Syne'] font-bold text-[20px] text-white transition-transform hover:-translate-y-0.5"
             >
               Send Invite →
             </a>
@@ -334,7 +334,7 @@ export default function CaseStudy() {
 function InsightRow({ n, t, d }: { n: string; t: string; d: string }) {
   return (
     <div className="flex gap-[20px] py-[28px]">
-      <span className="font-['Syne'] font-bold text-[#ff5c3a] text-[18px]">{n}</span>
+      <span className="font-['Syne'] font-bold text-[#ff5c3a] text-[20px]">{n}</span>
       <p className="font-['Syne'] text-[17px] leading-[1.55] text-[#c1c1c1]">
         <span className="font-bold text-white">{t}</span>
         <span className="text-[#929292]">{` — ${d}`}</span>

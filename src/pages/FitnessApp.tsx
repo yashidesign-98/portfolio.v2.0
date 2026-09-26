@@ -26,13 +26,13 @@ const topOffsets = [40, 0, 50, 15, 45, 20];
 const bottomOffsets = [0, 55, 25, 65, 5];
 
 const font = "font-['Syne']";
-const body = `${font} font-normal text-[#7d8590] text-[18px] leading-[1.6] tracking-[0.18px]`;
-const label = `${font} text-[14px] uppercase tracking-[3px] text-[#6b7280]`;
+const body = `${font} font-normal text-[#7d8590] text-[20px] leading-[1.6] tracking-[0.18px]`;
+const label = `${font} text-[18px] uppercase tracking-[3px] text-[#6b7280]`;
 const heading = `${font} font-bold text-white text-[36px] tracking-[0.5px]`;
 
 function HeroPill({ children }: { children: ReactNode }) {
   return (
-    <div className={`inline-flex w-fit items-center gap-[11px] rounded-full border border-dashed border-[#5a5a5a] bg-black px-[24px] py-[11px] ${font} text-[15px] tracking-[0.3px] text-[#ff5c3a]`}>
+    <div className={`inline-flex w-fit items-center gap-[11px] rounded-full border border-dashed border-[#5a5a5a] bg-black px-[24px] py-[11px] ${font} text-[18px] tracking-[0.3px] text-[#ff5c3a]`}>
       <span className="size-[9px] rounded-full bg-[#ff5c3a]" />
       {children}
     </div>
@@ -41,7 +41,7 @@ function HeroPill({ children }: { children: ReactNode }) {
 
 function SectionPill({ children }: { children: ReactNode }) {
   return (
-    <div className={`inline-flex w-fit items-center rounded-full border border-dashed border-[#3f3f46] bg-black px-[20px] py-[9px] ${font} text-[13px] uppercase tracking-[2px] text-[#9aa0a8]`}>
+    <div className={`inline-flex w-fit items-center rounded-full border border-dashed border-[#3f3f46] bg-black px-[20px] py-[9px] ${font} text-[18px] uppercase tracking-[2px] text-[#9aa0a8]`}>
       {children}
     </div>
   );
@@ -94,7 +94,7 @@ export default function FitnessApp() {
               {roadblocks.map((r) => (
                 <div key={r.lead} className="relative flex flex-col gap-[22px]">
                   <span className="size-[14px] rounded-full bg-[#ff5c3a] shadow-[0_0_14px_2px_rgba(255,92,58,0.55)]" />
-                  <p className={`${font} text-[16px] leading-[1.55] text-[#8b929c]`}>
+                  <p className={`${font} text-[20px] leading-[1.55] text-[#8b929c]`}>
                     <span className="font-bold text-white">{r.lead}</span>
                     {r.rest}
                   </p>
@@ -117,7 +117,7 @@ export default function FitnessApp() {
                 className="flex w-[300px] shrink-0 flex-col items-center justify-center gap-[10px] rounded-[12px] border border-[#292929] border-solid bg-[#141414] px-[24px] py-[40px] text-center"
               >
                 <span className={`${font} font-bold text-[#ff5c3a] text-[52px] tracking-[0.5px]`}>{s.n}</span>
-                <span className={`${font} text-[15px] leading-[1.4] text-[#929292]`}>{s.d}</span>
+                <span className={`${font} text-[18px] leading-[1.4] text-[#929292]`}>{s.d}</span>
               </div>
             ))}
             <div className="flex flex-1 flex-col justify-center gap-[16px] pl-[16px]">
@@ -136,7 +136,7 @@ export default function FitnessApp() {
           <SectionPill>03 — Interface</SectionPill>
           <div className="flex flex-col gap-[6px]">
             <h2 className={heading}>User Interface</h2>
-            <span className={`${font} text-[16px] text-[#7d8590]`}>design solution</span>
+            <span className={`${font} text-[20px] text-[#7d8590]`}>design solution</span>
           </div>
 
           <div className="mt-[16px] flex flex-col gap-[28px]">

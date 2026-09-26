@@ -40,7 +40,7 @@ const steps = [
 
 function Pill({ children }: { children: ReactNode }) {
   return (
-    <div className="inline-flex w-fit items-center rounded-[6px] border border-[#ff5c3a] border-solid bg-black px-[16px] py-[6px] font-['Syne'] text-[13px] uppercase tracking-[1.6px] text-[#ff5c3a] shadow-[0_0_24px_0_rgba(255,92,58,0.25)]">
+    <div className="inline-flex w-fit items-center rounded-[6px] border border-[#ff5c3a] border-solid bg-black px-[16px] py-[6px] font-['Syne'] text-[18px] uppercase tracking-[1.6px] text-[#ff5c3a] shadow-[0_0_24px_0_rgba(255,92,58,0.25)]">
       {children}
     </div>
   );
@@ -50,7 +50,7 @@ function Counter({ n }: { n: number }) {
   return (
     <div className="relative size-[40px] shrink-0">
       <AccentMask src={imgCounter} className="absolute inset-0 size-full" stretch />
-      <span className="absolute inset-0 flex items-center justify-center font-['Syne'] font-bold text-[18px] leading-none text-white">
+      <span className="absolute inset-0 flex items-center justify-center font-['Syne'] font-bold text-[20px] leading-none text-white">
         {n}
       </span>
     </div>
@@ -68,7 +68,7 @@ function SectionHead({ n, label, center = false }: { n: number; label: string; c
 }
 
 const heading = "font-['Syne'] font-bold text-white text-[40px] tracking-[1px]";
-const body = "font-['Syne'] font-normal text-[#7d8590] text-[18px] leading-[1.6] tracking-[0.18px]";
+const body = "font-['Syne'] font-normal text-[#7d8590] text-[20px] leading-[1.6] tracking-[0.18px]";
 
 // Ordered to match the Figma "User interface" board: splash → onboarding →
 // home/profile → info pages → appointment & chat flows → doctor lists.
@@ -86,7 +86,7 @@ export default function MedicalApp() {
         {/* Hero */}
         <section className="flex items-start justify-between gap-[60px]">
           <div className="flex max-w-[820px] flex-col gap-[26px] pt-[40px]">
-            <div className="inline-flex w-fit items-center gap-[11px] rounded-full border border-dashed border-[#5a5a5a] bg-black px-[26px] py-[13px] font-['Syne'] text-[18px] tracking-[0.3px] text-[#ff5c3a]">
+            <div className="inline-flex w-fit items-center gap-[11px] rounded-full border border-dashed border-[#5a5a5a] bg-black px-[26px] py-[13px] font-['Syne'] text-[20px] tracking-[0.3px] text-[#ff5c3a]">
               <span className="size-[10px] rounded-full bg-[#ff5c3a]" />
               case study - healthcare
             </div>
@@ -111,8 +111,8 @@ export default function MedicalApp() {
           <div className="grid grid-cols-4 border-y border-[#232323]">
             {meta.map((m, i) => (
               <div key={m.label} className={`px-[24px] py-[22px] ${i > 0 ? "border-l border-[#232323]" : ""}`}>
-                <div className="mb-[8px] font-['Syne'] text-[12px] uppercase tracking-[1.4px] text-[#7d8590]">{m.label}</div>
-                <div className="font-['Syne'] text-[16px] text-white">{m.value}</div>
+                <div className="mb-[8px] font-['Syne'] text-[18px] uppercase tracking-[1.4px] text-[#7d8590]">{m.label}</div>
+                <div className="font-['Syne'] text-[20px] text-white">{m.value}</div>
               </div>
             ))}
           </div>
@@ -142,7 +142,7 @@ export default function MedicalApp() {
                   <div className="absolute inset-[-7px] rounded-full border border-dashed border-[rgba(255,92,58,0.4)]" />
                   <span className="font-['Syne'] font-bold text-[#ff5c3a] text-[26px]">{s.pct}</span>
                 </div>
-                <p className="text-center font-['Syne'] text-[14px] leading-[1.55] text-[#929292]">{s.d}</p>
+                <p className="text-center font-['Syne'] text-[18px] leading-[1.55] text-[#929292]">{s.d}</p>
               </div>
             ))}
           </div>
@@ -153,13 +153,13 @@ export default function MedicalApp() {
           <SectionHead n={2} label="Results" />
           <div className="flex flex-col gap-[6px]">
             <h2 className={heading}>Results</h2>
-            <span className="font-['Syne'] text-[14px] text-[#7d8590]">achieved with UX/UI</span>
+            <span className="font-['Syne'] text-[18px] text-[#7d8590]">achieved with UX/UI</span>
           </div>
           <div className="grid grid-cols-4 gap-[24px]">
             {results.map((r) => (
               <div key={r.n} className="rounded-[12px] border border-[#232323] border-solid bg-[#141414] p-[26px]">
-                <div className="mb-[14px] font-['Syne'] font-bold text-[#ff5c3a] text-[18px]">{r.n}</div>
-                <p className="font-['Syne'] text-[15px] leading-[1.6] text-[#929292]">{r.d}</p>
+                <div className="mb-[14px] font-['Syne'] font-bold text-[#ff5c3a] text-[20px]">{r.n}</div>
+                <p className="font-['Syne'] text-[18px] leading-[1.6] text-[#929292]">{r.d}</p>
               </div>
             ))}
           </div>
@@ -185,13 +185,13 @@ export default function MedicalApp() {
                     style={{ left, borderColor: "rgba(255,92,58,0.55)" }}
                   />
                   <div
-                    className="absolute -translate-x-1/2 whitespace-nowrap rounded-[8px] border border-[#3a3a3a] border-solid bg-[#1a1a1a] px-[16px] py-[9px] font-['Syne'] text-[14px] text-white"
+                    className="absolute -translate-x-1/2 whitespace-nowrap rounded-[8px] border border-[#3a3a3a] border-solid bg-[#1a1a1a] px-[16px] py-[9px] font-['Syne'] text-[18px] text-white"
                     style={{ left, top: s.top }}
                   >
                     {s.label}
                   </div>
                   <div
-                    className="absolute bottom-[20px] -translate-x-1/2 font-['Syne'] text-[13px] uppercase tracking-[1px] text-[#ff5c3a]"
+                    className="absolute bottom-[20px] -translate-x-1/2 font-['Syne'] text-[18px] uppercase tracking-[1px] text-[#ff5c3a]"
                     style={{ left }}
                   >
                     Step {i + 1}
@@ -234,15 +234,15 @@ export default function MedicalApp() {
         {/* CTA */}
         <section className="flex flex-col items-center gap-[20px] rounded-[16px] border border-[#292929] border-solid bg-[#0f0f0f] px-[40px] py-[70px] text-center">
           <h2 className="font-['Syne'] font-bold text-white text-[40px] tracking-[1px]">Invite Yashi to your project</h2>
-          <p className="font-['Syne'] text-[18px] text-[#7d8590]">Open to full-time roles, freelance collaboration, and design consulting.</p>
+          <p className="font-['Syne'] text-[20px] text-[#7d8590]">Open to full-time roles, freelance collaboration, and design consulting.</p>
           <div className="mt-[8px] flex items-center gap-[16px]">
             <input
               placeholder="Enter your email address"
-              className="w-[360px] rounded-full border border-[#343434] bg-[#0d0d0d] px-[22px] py-[14px] font-['Syne'] text-[16px] text-white outline-none placeholder:text-[#5a5a5a] focus:border-[#ff5c3a]"
+              className="w-[360px] rounded-full border border-[#343434] bg-[#0d0d0d] px-[22px] py-[14px] font-['Syne'] text-[20px] text-white outline-none placeholder:text-[#5a5a5a] focus:border-[#ff5c3a]"
             />
             <a
               href="mailto:bhatnagar2898@gmail.com"
-              className="flex items-center gap-[8px] rounded-full bg-[#ff5c3a] px-[28px] py-[14px] font-['Syne'] font-bold text-[16px] text-white transition-transform hover:-translate-y-0.5"
+              className="flex items-center gap-[8px] rounded-full bg-[#ff5c3a] px-[28px] py-[14px] font-['Syne'] font-bold text-[20px] text-white transition-transform hover:-translate-y-0.5"
             >
               Send Invite →
             </a>
