@@ -1,6 +1,6 @@
 import AccentMask from "../components/AccentMask";
-﻿import { useRef } from "react";
-import { motion, useScroll, useSpring, useTransform, type MotionValue } from "motion/react";
+﻿import { useEffect, useRef } from "react";
+import { motion, useMotionValue, useSpring, useTransform, type MotionValue } from "motion/react";
 
 const assetPathPrefix = "/assets";
 const imgPixelarticonsArrowDown = `${assetPathPrefix}/99215.svg`;
@@ -54,10 +54,35 @@ export default function Experience() {
   const rootRef = useRef<HTMLDivElement>(null);
   // Scrubs 0 -> 1 as the section travels from near the bottom of the viewport
   // up through it, driving the timeline fill and the dot activations.
-  const { scrollYProgress } = useScroll({
-    target: rootRef,
-    offset: ["start 70%", "end 40%"],
-  });
+  //
+  // Measured manually from the live bounding rect on every scroll rather than
+  // via useScroll({ target }): the page renders inside a transform: scale() +
+  // overflow-hidden canvas whose height is set asynchronously, so useScroll's
+  // one-time offset capture reads a stale layout in the production build (where
+  // there's no StrictMode remount to re-measure) and the progress sticks at 0.
+  // getBoundingClientRect returns transformed, viewport-relative coordinates,
+  // so this stays correct regardless of the scaled ancestor.
+  const scrollYProgress = useMotionValue(0);
+  useEffect(() => {
+    const el = rootRef.current;
+    if (!el) return;
+    const update = () => {
+      const rect = el.getBoundingClientRect();
+      const vh = window.innerHeight;
+      // p = 0 when the section top is at 70% of the viewport height;
+      // p = 1 when its bottom reaches 40% of the viewport height.
+      const denom = 0.3 * vh + rect.height;
+      const p = denom > 0 ? (0.7 * vh - rect.top) / denom : 0;
+      scrollYProgress.set(Math.max(0, Math.min(1, p)));
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, [scrollYProgress]);
   // Spring-smoothed progress so the fill and dots ease rather than track the
   // raw scroll position 1:1.
   const progress = useSpring(scrollYProgress, {
