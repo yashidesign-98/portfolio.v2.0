@@ -18,7 +18,10 @@ const stats = [
   { n: "22%", d: "improvement in workout consistency" },
 ];
 
-const uiScreens = Array.from({ length: 11 }, (_, i) => `/assets/fit-ui-${String(i + 1).padStart(2, "0")}.png`);
+// Logical flow: splash -> onboarding -> auth (top row), then the in-app
+// experience pages (bottom row). Numbers map to the fit-ui-NN asset files.
+const uiOrder = [9, 6, 7, 8, 3, 5, 1, 10, 11, 2, 4];
+const uiScreens = uiOrder.map((n) => `/assets/fit-ui-${String(n).padStart(2, "0")}.png`);
 const topOffsets = [40, 0, 50, 15, 45, 20];
 const bottomOffsets = [0, 55, 25, 65, 5];
 
