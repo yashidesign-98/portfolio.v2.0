@@ -207,45 +207,6 @@ function Laptop({ children }: { children: ReactNode }) {
 }
 
 // NFT detail panel with a floating "Txn Hash" tooltip (stakeholder expectations).
-function NftPanel() {
-  return (
-    <div className="relative w-full">
-      <div className="rounded-[18px] border border-[#2a2a2a] border-solid bg-[#0a0a0a] p-[14px]">
-        <div className="flex h-[420px] gap-[16px] rounded-[10px] bg-[#111214] p-[20px]">
-          <div className="flex flex-1 flex-col gap-[16px]">
-            <div className="flex items-center gap-[8px] font-['Syne'] text-[13px] text-white">
-              <span className="size-[18px] rounded-[4px]" style={{ background: GREEN }} />
-              Blockscope
-            </div>
-            <div
-              className="flex flex-1 items-center justify-center rounded-[14px]"
-              style={{ background: `linear-gradient(135deg, ${GREEN_DARK}, #0a0a0a)` }}
-            >
-              <div
-                className="size-[150px] rounded-[20px]"
-                style={{ background: `linear-gradient(135deg, ${GREEN}, ${GREEN_DARK})`, boxShadow: "0 0 50px rgba(31,224,138,0.3)" }}
-              />
-            </div>
-          </div>
-          <div className="flex w-[180px] flex-col gap-[10px]">
-            <div className="font-['Syne'] text-[13px] font-bold text-white">Details</div>
-            {["Owner", "Token ID", "Contract", "Standard", "Chain", "Last sale"].map((r) => (
-              <div key={r} className="flex flex-col gap-[6px] border-b border-[#1e1e1e] pb-[8px]">
-                <span className="font-['Syne'] text-[10px] text-[#6b6b6b]">{r}</span>
-                <span className="h-[6px] w-[70%] rounded-full bg-[#2a2a2a]" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div className="absolute bottom-[70px] left-[42%] flex flex-col gap-[6px] rounded-[10px] border border-[#2a2a2a] border-solid bg-[#1a1a1a] px-[18px] py-[12px] shadow-[0_12px_34px_rgba(0,0,0,0.55)]">
-        <span className="flex items-center gap-[6px] font-['Syne'] text-[12px] text-[#9a9a9a]">Txn Hash ⧉</span>
-        <span className="font-['Syne'] text-[13px] text-white">0x6bhb...30e26668</span>
-      </div>
-    </div>
-  );
-}
-
 function ProcessStep({ icon, t, d }: { icon: string; t: string; d: string }) {
   return (
     <div className="flex flex-col items-center gap-[14px] text-center">
@@ -290,17 +251,6 @@ function ResearchRow({ t, d }: { t: string; d: string }) {
   );
 }
 
-function ScreenTile({ n }: { n: number }) {
-  return (
-    <div
-      className="flex aspect-[4/3] items-center justify-center rounded-[10px] border border-dashed border-[rgba(255,92,58,0.45)] bg-[#141414] font-['Syne'] text-[13px] text-[#5a5a5a]"
-      style={{ transform: `rotate(${n % 2 === 0 ? -2 : 2}deg)` }}
-    >
-      {`[ screen 0${n} ]`}
-    </div>
-  );
-}
-
 export default function BlockExplorer() {
   return (
     <div className="relative z-0 w-[1980px] pb-[120px] pt-[180px]">
@@ -331,9 +281,11 @@ export default function BlockExplorer() {
             ))}
           </div>
           <div className="mt-[16px] w-full">
-            <BrowserFrame>
-              <BlockscopeMock />
-            </BrowserFrame>
+            <img
+              src="/assets/blk-hero.png"
+              alt="Blockscope landing page"
+              className="block h-auto w-full rounded-[16px] border border-[#232323] border-solid shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
+            />
           </div>
         </section>
 
@@ -349,10 +301,12 @@ export default function BlockExplorer() {
               <BulletRow key={r} text={r} />
             ))}
           </div>
-          <div className="mt-[26px] w-[85%] self-center">
-            <Laptop>
-              <BlockscopeMock withFooter />
-            </Laptop>
+          <div className="mt-[26px] w-[70%] self-center">
+            <img
+              src="/assets/blk-results-laptop.png"
+              alt="Blockscope landing page on MacBook"
+              className="block h-auto w-full drop-shadow-[0_24px_60px_rgba(0,0,0,0.6)]"
+            />
           </div>
         </section>
 
@@ -371,7 +325,11 @@ export default function BlockExplorer() {
                 <BulletRow key={e} text={e} />
               ))}
             </div>
-            <NftPanel />
+            <img
+              src="/assets/blk-nft-mockup.png"
+              alt="Blockscope NFT detail on desktop"
+              className="block h-auto w-full drop-shadow-[0_24px_60px_rgba(0,0,0,0.6)]"
+            />
           </div>
         </section>
 
@@ -433,9 +391,14 @@ export default function BlockExplorer() {
               data-heavy environment.
             </p>
           </div>
-          <div className="mt-[24px] grid grid-cols-4 gap-[28px] rounded-[16px] border border-[#1e1e1e] border-solid bg-[#0a0a0a] p-[40px]">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
-              <ScreenTile key={n} n={n} />
+          <div className="mt-[24px] grid grid-cols-4 gap-[24px] rounded-[16px] border border-[#1e1e1e] border-solid bg-[#0a0a0a] p-[40px]">
+            {Array.from({ length: 42 }, (_, i) => `/assets/blk-ui-${String(i + 1).padStart(2, "0")}.png`).map((src, i) => (
+              <img
+                key={src}
+                src={src}
+                alt={`Blockscope screen ${i + 1}`}
+                className="block h-auto w-full self-start rounded-[10px] border border-[#232323] border-solid shadow-[0_10px_30px_rgba(0,0,0,0.45)]"
+              />
             ))}
           </div>
         </section>
