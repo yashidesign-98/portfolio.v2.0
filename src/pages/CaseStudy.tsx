@@ -97,16 +97,6 @@ function SectionHead({ n, label }: { n: number; label: string }) {
   );
 }
 
-function Placeholder({ label, className = "" }: { label: string; className?: string }) {
-  return (
-    <div
-      className={`flex items-center justify-center rounded-[12px] border border-[#292929] border-solid bg-gradient-to-br from-[#1a1a1a] to-[#141414] px-[20px] text-center font-mono text-[15px] text-[#5a5a5a] ${className}`}
-    >
-      {`[ ${label} ]`}
-    </div>
-  );
-}
-
 const heading = "font-['Syne'] font-bold text-white text-[40px] tracking-[1px]";
 const body = "font-['Syne'] font-normal text-[#7d8590] text-[18px] leading-[1.6] tracking-[0.18px]";
 const cardBase = "rounded-[12px] border border-[#292929] border-solid bg-[#141414] p-[28px]";
@@ -140,7 +130,11 @@ export default function CaseStudy() {
               </div>
             ))}
           </div>
-          <Placeholder label="product screenshot — Nubo Cloud console" className="mt-[12px] h-[620px] w-full" />
+          <img
+            src="/assets/cloud-hero.png"
+            alt="Nubo Cloud console — dashboard"
+            className="mt-[12px] block h-auto w-full rounded-[16px] border border-[#292929] border-solid shadow-[0_16px_50px_rgba(0,0,0,0.5)]"
+          />
         </section>
 
         {/* Overview */}
@@ -167,7 +161,11 @@ export default function CaseStudy() {
                 ))}
               </div>
             </div>
-            <Placeholder label="dashboard overview visual" className="h-[420px] w-[640px] shrink-0 self-start" />
+            <img
+              src="/assets/cloud-overview-monitor.png"
+              alt="Nubo Cloud — resource metrics on desktop"
+              className="block h-auto w-[640px] shrink-0 self-start drop-shadow-[0_20px_50px_rgba(0,0,0,0.55)]"
+            />
           </div>
         </section>
 
