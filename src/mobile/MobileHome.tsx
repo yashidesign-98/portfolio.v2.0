@@ -315,10 +315,6 @@ export default function MobileHome() {
               alt="Yashi Bhatnagar"
               className="block h-[440px] w-full object-cover object-top sm:h-[520px]"
             />
-            {/* Scope / target overlay */}
-            <div className="pointer-events-none absolute right-6 top-8 flex size-11 items-center justify-center rounded-full border border-white/90">
-              <span className="size-2.5 rounded-full bg-[#ff5c3a]" />
-            </div>
           </motion.div>
 
           {/* Top-left annotation label */}

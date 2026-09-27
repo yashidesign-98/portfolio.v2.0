@@ -70,18 +70,22 @@ export default function MobileChrome({ progress }: { progress: number }) {
   }, [accent]);
 
   // Lock page scrolling while a drag-gesture tool (doodle / marquee) is active,
-  // so finger movement draws instead of scrolling the page.
+  // so finger movement draws instead of scrolling the page. iOS Safari ignores
+  // body `overflow: hidden` for touch scrolling, so we also preventDefault on
+  // touchmove (which still lets pointer events through for drawing).
   useEffect(() => {
     const lock = tool === "doodle" || tool === "marquee";
+    if (!lock) return;
     const prevOverflow = document.body.style.overflow;
     const prevTouch = document.body.style.touchAction;
-    if (lock) {
-      document.body.style.overflow = "hidden";
-      document.body.style.touchAction = "none";
-    }
+    document.body.style.overflow = "hidden";
+    document.body.style.touchAction = "none";
+    const blockTouch = (e: TouchEvent) => e.preventDefault();
+    document.addEventListener("touchmove", blockTouch, { passive: false });
     return () => {
       document.body.style.overflow = prevOverflow;
       document.body.style.touchAction = prevTouch;
+      document.removeEventListener("touchmove", blockTouch);
     };
   }, [tool]);
 
