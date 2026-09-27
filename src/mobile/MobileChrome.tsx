@@ -69,6 +69,22 @@ export default function MobileChrome({ progress }: { progress: number }) {
     document.documentElement.style.setProperty("--scrubber", scrubberFor(accent));
   }, [accent]);
 
+  // Lock page scrolling while a drag-gesture tool (doodle / marquee) is active,
+  // so finger movement draws instead of scrolling the page.
+  useEffect(() => {
+    const lock = tool === "doodle" || tool === "marquee";
+    const prevOverflow = document.body.style.overflow;
+    const prevTouch = document.body.style.touchAction;
+    if (lock) {
+      document.body.style.overflow = "hidden";
+      document.body.style.touchAction = "none";
+    }
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      document.body.style.touchAction = prevTouch;
+    };
+  }, [tool]);
+
   const p = Math.max(0, Math.min(100, progress));
   const totalFrames = Math.round((p / 100) * 120 * 24);
   const tc = `00:${pad(Math.floor(totalFrames / 1440))}:${pad(Math.floor(totalFrames / 24) % 60)}:${pad(totalFrames % 24)}`;
