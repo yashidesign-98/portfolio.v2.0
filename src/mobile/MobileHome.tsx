@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "motion/react";
 
 // Dedicated mobile/tablet home layout (shown below the lg breakpoint). Reuses the
 // same content and images as the desktop canvas, but with a fluid, stacked,
@@ -113,19 +114,30 @@ const experience = [
   },
 ];
 
-const tools = ["Figma", "Claude", "Cursor", "Miro", "Framer", "Webflow", "Balsamiq"];
-const uxSkills = [
-  "Design Thinking",
-  "Product Design",
-  "Mobile App Design",
-  "Web Design",
-  "User Flows",
-  "Wireframing",
-  "Prototyping",
-  "UX Strategy",
-  "Design Systems",
+const tools = [
+  { label: "Figma", src: `${A}/d70d4.svg` },
+  { label: "Claude", src: `${A}/ee3df.svg` },
+  { label: "Cursor", src: `${A}/6844e.svg` },
+  { label: "Miro", src: `${A}/7e8ad.svg` },
+  { label: "Framer", src: `${A}/bf1ce.svg` },
+  { label: "Webflow", src: `${A}/1fb5d.svg` },
+  { label: "Balsamiq", src: `${A}/ef0c1.svg` },
 ];
-const additional = ["Microsoft 365", "Adobe Creative Suite"];
+const uxSkills = [
+  { label: "Design Thinking", src: `${A}/c942c.svg` },
+  { label: "Product Design", src: `${A}/750e1.svg` },
+  { label: "Mobile App Design", src: `${A}/f9d47.svg` },
+  { label: "Web Design", src: `${A}/c22c7.svg` },
+  { label: "User Flows", src: `${A}/b4622.svg` },
+  { label: "Wireframing", src: `${A}/17f7a.svg` },
+  { label: "Prototyping", src: `${A}/0e876.svg` },
+  { label: "UX Strategy", src: `${A}/86515.svg` },
+  { label: "Design Systems", src: `${A}/85b8f.svg` },
+];
+const additional = [
+  { label: "Microsoft 365", src: `${A}/db18b.svg` },
+  { label: "Adobe Creative Suite", src: `${A}/b022e.svg` },
+];
 const certs = [
   { t: "Google UX Design Professional Certificate", d: "May 2022" },
   { t: "Affordances: Designing Intuitive User Interfaces", d: "IxDF Course · March 2025" },
@@ -159,6 +171,15 @@ function Pill({ children }: { children: React.ReactNode }) {
   );
 }
 
+function IconPill({ label, src }: { label: string; src: string }) {
+  return (
+    <span className="inline-flex items-center gap-2 rounded-full border border-[#ff5c3a]/40 bg-[rgba(255,92,58,0.08)] px-3 py-1 text-[13px] text-[#ffb096]">
+      <img src={src} alt="" className="size-[14px] shrink-0" />
+      {label}
+    </span>
+  );
+}
+
 export default function MobileHome() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [email, setEmail] = useState("");
@@ -177,9 +198,9 @@ export default function MobileHome() {
   };
 
   return (
-    <div className="dot-grid min-h-screen overflow-x-hidden bg-[#0d0d0d] pb-[100px] font-['Syne'] text-white">
+    <div id="mobile-root" className="dot-grid min-h-screen overflow-x-hidden bg-[#0d0d0d] pb-[100px] pt-[65px] font-['Syne'] text-white">
       {/* Header */}
-      <header className="sticky top-0 z-50 flex items-center justify-between border-b border-[#1e1e1e] bg-[#0d0d0d]/90 px-5 py-4 backdrop-blur">
+      <header className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between border-b border-[#1e1e1e] bg-[#0d0d0d]/90 px-5 py-4 backdrop-blur">
         <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-1">
           <span className="text-[26px] font-extrabold text-[#ff5c3a]">YB</span>
           <span className="text-[#ff5c3a]">✦</span>
@@ -196,7 +217,7 @@ export default function MobileHome() {
       </header>
 
       {menuOpen && (
-        <nav className="sticky top-[65px] z-40 flex flex-col border-b border-[#1e1e1e] bg-[#0d0d0d]/95 px-5 py-2 backdrop-blur">
+        <nav className="fixed left-0 right-0 top-[65px] z-40 flex flex-col border-b border-[#1e1e1e] bg-[#0d0d0d]/95 px-5 py-2 backdrop-blur">
           {nav.map((item) => (
             <button
               key={item.href}
@@ -230,7 +251,7 @@ export default function MobileHome() {
               height="calc(100% - 2px)"
               fill="none"
               stroke="#ff5c3a"
-              strokeWidth="1.5"
+              strokeWidth="0.75"
               strokeDasharray="12 8"
             />
           </svg>
@@ -240,25 +261,14 @@ export default function MobileHome() {
           <span className="absolute -bottom-1 -left-1 size-[10px] bg-[#ff5c3a]" />
           <span className="absolute -bottom-1 -right-1 size-[10px] bg-[#ff5c3a]" />
 
-          {/* Floating annotation badges */}
-          <div className="float-badge absolute right-3 top-4 z-10 rounded-lg border border-[#7d8590] bg-[#1e1e1e] px-3 py-1.5 text-[12px] text-[#c1c1c1]">
-            5+ yrs exp
-          </div>
-          <div
-            className="float-badge absolute right-4 top-[86px] z-10 rounded-lg border border-[#7d8590] bg-[#1e1e1e] px-3 py-1.5 text-[12px] text-[#c1c1c1]"
-            style={{ animationDelay: "-1.3s" }}
-          >
-            Google Certified
-          </div>
-
           {/* Layered name (outline behind, solid in front) */}
           <div className="relative">
-            <h1 className="text-[44px] font-extrabold leading-[0.98] tracking-[1px] text-transparent [-webkit-text-stroke:1.5px_rgba(255,92,58,0.45)] sm:text-[64px]">
+            <h1 className="text-[36px] font-extrabold leading-[0.98] tracking-[0px] text-transparent [-webkit-text-stroke:1.5px_rgba(255,92,58,0.45)] sm:text-[60px]">
               Yashi
               <br />
               Bhatnagar
             </h1>
-            <h1 className="absolute left-[5px] top-[5px] text-[44px] font-extrabold leading-[0.98] tracking-[1px] text-white sm:text-[64px]">
+            <h1 className="absolute left-[4px] top-[4px] text-[36px] font-extrabold leading-[0.98] tracking-[0px] text-white sm:text-[60px]">
               Yashi
               <br />
               Bhatnagar
@@ -289,11 +299,54 @@ export default function MobileHome() {
       {/* About */}
       <section id="m-about" className="scroll-mt-20 border-t border-[#1e1e1e] bg-[#101010] px-5 py-14">
         <SectionLabel n="01">About</SectionLabel>
-        <img
-          src={`${A}/bbb62.png`}
-          alt="Yashi Bhatnagar"
-          className="mb-7 h-[360px] w-full rounded-[12px] border border-[#ff5c3a]/40 object-cover object-top md:h-[460px]"
-        />
+
+        {/* Profile — Figma "selected layer" treatment, matching desktop. Each piece
+            starts tilted/distorted and springs into alignment when scrolled into view. */}
+        <div className="relative mx-auto mb-10 mt-2 w-full max-w-[420px] px-2">
+          <motion.div
+            className="relative border border-[#ff5c3a] bg-[#1a1a1a] p-3 shadow-[4px_4px_20px_0px_rgba(255,92,58,0.2)]"
+            initial={{ rotate: 6, scale: 1.05 }}
+            whileInView={{ rotate: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-15%" }}
+            transition={{ type: "spring", bounce: 0.3, duration: 0.8 }}
+          >
+            <img
+              src={`${A}/bbb62.png`}
+              alt="Yashi Bhatnagar"
+              className="block h-[440px] w-full object-cover object-top sm:h-[520px]"
+            />
+            {/* Scope / target overlay */}
+            <div className="pointer-events-none absolute right-6 top-8 flex size-11 items-center justify-center rounded-full border border-white/90">
+              <span className="size-2.5 rounded-full bg-[#ff5c3a]" />
+            </div>
+          </motion.div>
+
+          {/* Top-left annotation label */}
+          <motion.div
+            className="absolute -left-1 -top-3 rounded-[4px] border border-[#343434] bg-[#0d0d0d] px-3 py-1.5"
+            initial={{ rotate: 10, x: 8, y: 5, opacity: 0 }}
+            whileInView={{ rotate: 0, x: 0, y: 0, opacity: 1 }}
+            viewport={{ once: true, margin: "-15%" }}
+            transition={{ type: "spring", bounce: 0.4, duration: 0.7 }}
+          >
+            <span className="whitespace-nowrap font-['Syne'] text-[11px] tracking-[1px] text-[#abacb3]">
+              layer : yashi_profile · selected
+            </span>
+          </motion.div>
+
+          {/* Bottom-right metadata label */}
+          <motion.div
+            className="absolute -bottom-3 -right-1 rounded-[4px] border border-[#343434] bg-[#0d0d0d] px-3 py-1.5"
+            initial={{ rotate: -9, x: -6, y: 6, opacity: 0 }}
+            whileInView={{ rotate: 0, x: 0, y: 0, opacity: 1 }}
+            viewport={{ once: true, margin: "-15%" }}
+            transition={{ type: "spring", bounce: 0.35, duration: 0.75 }}
+          >
+            <span className="whitespace-nowrap font-['Syne'] text-[10px] tracking-[0.6px] text-[#abacb3]">
+              w:540 · H: 680 · opacity: 100% · blend: normal
+            </span>
+          </motion.div>
+        </div>
         <p className="text-[19px] leading-[1.55] text-white/90 md:text-[22px]">
           I taught myself design through late nights, real projects, and no textbooks — then spent 5 years turning messy
           ideas into products people actually enjoy using. Good design disappears; it just makes sense, solves real
@@ -376,7 +429,7 @@ export default function MobileHome() {
             <h3 className="mb-4 text-[15px] font-semibold tracking-[1px]">UI/UX & Wireframing Tools</h3>
             <div className="flex flex-wrap gap-2.5">
               {tools.map((t) => (
-                <Pill key={t}>{t}</Pill>
+                <IconPill key={t.label} label={t.label} src={t.src} />
               ))}
             </div>
           </div>
@@ -384,7 +437,7 @@ export default function MobileHome() {
             <h3 className="mb-4 text-[15px] font-semibold tracking-[1px]">UX Skills</h3>
             <div className="flex flex-wrap gap-2.5">
               {uxSkills.map((t) => (
-                <Pill key={t}>{t}</Pill>
+                <IconPill key={t.label} label={t.label} src={t.src} />
               ))}
             </div>
           </div>
@@ -392,7 +445,7 @@ export default function MobileHome() {
             <h3 className="mb-4 text-[15px] font-semibold tracking-[1px]">Additional Tools</h3>
             <div className="flex flex-wrap gap-2.5">
               {additional.map((t) => (
-                <Pill key={t}>{t}</Pill>
+                <IconPill key={t.label} label={t.label} src={t.src} />
               ))}
             </div>
           </div>
