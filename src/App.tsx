@@ -15,6 +15,7 @@ import Jharokhas from "./pages/Jharokhas";
 import SummerRemix from "./pages/SummerRemix";
 import MobileHome from "./mobile/MobileHome";
 import MobileChrome from "./mobile/MobileChrome";
+import MobileDetail from "./mobile/pages/MobileDetail";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Work from "./sections/Work";
@@ -100,16 +101,14 @@ export default function App() {
   const isHome = !route;
   return (
     <>
-      {/* Mobile / tablet home layout (below the lg breakpoint). */}
-      {isHome && (
-        <div className="lg:hidden">
-          <MobileHome />
-          <MobileChrome progress={progress} />
-        </div>
-      )}
+      {/* Mobile / tablet layout (below the lg breakpoint): home + every detail page. */}
+      <div className="lg:hidden">
+        {isHome ? <MobileHome /> : <MobileDetail route={route} />}
+        <MobileChrome progress={progress} />
+      </div>
 
-      {/* Desktop scaled canvas — always for case studies; lg+ only for home. */}
-      <div className={isHome ? "hidden lg:block" : undefined}>
+      {/* Desktop scaled canvas — lg+ only (home and detail pages alike). */}
+      <div className="hidden lg:block">
       {/* Fixed Figma-chrome: header pinned to top, tool sidebar pinned to left.
           Both are scaled by the same factor as the canvas so they line up. */}
       <div
