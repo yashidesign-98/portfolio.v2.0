@@ -41,7 +41,7 @@ function HeroPill({ children }: { children: ReactNode }) {
 
 function SectionPill({ children }: { children: ReactNode }) {
   return (
-    <div className={`inline-flex w-fit items-center rounded-full border border-dashed border-[#3f3f46] bg-black px-[20px] py-[9px] ${font} text-[18px] uppercase tracking-[2px] text-[#9aa0a8]`}>
+    <div className={`inline-flex w-fit items-center rounded-full border border-dashed border-[#ff5c3a] bg-black px-[20px] py-[9px] ${font} text-[18px] uppercase tracking-[2px] text-[#ff5c3a] shadow-[0_0_24px_0_rgba(255,92,58,0.25)]`}>
       {children}
     </div>
   );

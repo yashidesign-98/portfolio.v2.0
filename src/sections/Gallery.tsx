@@ -53,7 +53,7 @@ export default function Gallery() {
             <p className="leading-[1.45]">Teaching generative models some taste, one poster set and twenty iterations at a time.</p>
           </div>
         </div>
-        <div className="absolute bg-black border-2 border-transparent border-solid transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#ff5c3a] hover:shadow-[0_12px_40px_0_rgba(255,92,58,0.25)] h-[710px] left-0 overflow-clip rounded-[10px] top-[151px] w-[554px]" data-node-id="1:7650" data-name="work 7">
+        <a href="#kitsch-odyssey" className="block cursor-pointer absolute bg-black border-2 border-transparent border-solid transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#ff5c3a] hover:shadow-[0_12px_40px_0_rgba(255,92,58,0.25)] h-[710px] left-0 overflow-clip rounded-[10px] top-[151px] w-[554px]" data-node-id="1:7650" data-name="work 7">
           <div className="-translate-x-1/2 absolute h-[746px] left-1/2 top-[-1px] w-[554px]" data-node-id="1:7651">
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               <img alt="" className="absolute h-[132.02%] left-0 max-w-none top-[-32.02%] w-full" src={imgKitsch} />
@@ -62,16 +62,16 @@ export default function Gallery() {
           <div className="absolute bg-gradient-to-b bottom-[-1px] from-[rgba(0,0,0,0)] h-[710px] left-[-1px] overflow-clip to-black w-[554px]" data-node-id="1:7652">
             <CardCaption title="Kitsch Odyssey" sub="Contemporary Indian kitsch series" />
           </div>
-        </div>
-        <div className="-translate-x-1/2 absolute bg-black border-2 border-transparent border-solid transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#ff5c3a] hover:shadow-[0_12px_40px_0_rgba(255,92,58,0.25)] h-[710px] left-1/2 overflow-clip rounded-[10px] top-[151px] w-[554px]" data-node-id="1:7659" data-name="work 10">
+        </a>
+        <a href="#jharokhas" className="block cursor-pointer -translate-x-1/2 absolute bg-black border-2 border-transparent border-solid transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#ff5c3a] hover:shadow-[0_12px_40px_0_rgba(255,92,58,0.25)] h-[710px] left-1/2 overflow-clip rounded-[10px] top-[151px] w-[554px]" data-node-id="1:7659" data-name="work 10">
           <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[741px] left-1/2 top-[calc(50%+0.5px)] w-[554px]" data-node-id="1:7660">
             <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgJharokhas} />
           </div>
           <div className="-translate-x-1/2 -translate-y-1/2 absolute bg-gradient-to-b from-[rgba(0,0,0,0)] h-[710px] left-1/2 overflow-clip to-black top-1/2 w-[554px]" data-node-id="1:7661">
             <CardCaption title="Jharokhas" sub="Royal arches, modern chill" />
           </div>
-        </div>
-        <div className="absolute bg-black border-2 border-transparent border-solid transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#ff5c3a] hover:shadow-[0_12px_40px_0_rgba(255,92,58,0.25)] h-[710px] overflow-clip right-0 rounded-[10px] top-[151px] w-[554px]" data-node-id="1:7668" data-name="work 11">
+        </a>
+        <a href="#summer-remix" className="block cursor-pointer absolute bg-black border-2 border-transparent border-solid transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#ff5c3a] hover:shadow-[0_12px_40px_0_rgba(255,92,58,0.25)] h-[710px] overflow-clip right-0 rounded-[10px] top-[151px] w-[554px]" data-node-id="1:7668" data-name="work 11">
           <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[710px] left-1/2 top-1/2 w-[554px]" data-node-id="1:7669">
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               <img alt="" className="absolute h-[129.06%] left-[-33.21%] max-w-none top-[-14.53%] w-[166.43%]" src={imgSummer} />
@@ -80,7 +80,7 @@ export default function Gallery() {
           <div className="absolute bg-gradient-to-b bottom-[-1px] from-[rgba(0,0,0,0)] h-[710px] left-[-1px] overflow-clip to-black w-[554px]" data-node-id="1:7670">
             <CardCaption title="Summer Remix" sub="Gen-Z summer collage prints" />
           </div>
-        </div>
+        </a>
       </div>
     </div>
   );

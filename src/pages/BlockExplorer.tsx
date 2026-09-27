@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import type { ReactNode } from "react";
 
 // Case study page — "Block Explorer Project" (Blockscope). Shares the app
@@ -26,11 +27,11 @@ const expectations = [
 ];
 
 const processSteps = [
-  { icon: "🔍", t: "Define", d: "Figuring out the problem" },
-  { icon: "🧭", t: "Empathize", d: "Understanding the people" },
-  { icon: "💡", t: "Ideate", d: "Generate ideas" },
-  { icon: "▦", t: "Prototype", d: "Creative & experimentation" },
-];
+  { icon: "define", t: "Define", d: "Figuring out the problem" },
+  { icon: "empathize", t: "Empathize", d: "Understanding the people" },
+  { icon: "ideate", t: "Ideate", d: "Generate Ideas" },
+  { icon: "prototype", t: "Prototype", d: "Creation & Experimentation" },
+] as const;
 
 const research = [
   {
@@ -207,17 +208,73 @@ function Laptop({ children }: { children: ReactNode }) {
 }
 
 // NFT detail panel with a floating "Txn Hash" tooltip (stakeholder expectations).
+const processIcons: Record<string, ReactNode> = {
+  define: (
+    <>
+      <circle cx="11" cy="11" r="7" />
+      <line x1="21" y1="21" x2="16.5" y2="16.5" />
+    </>
+  ),
+  empathize: (
+    <>
+      <path d="M12 20s-6.5-4.3-6.5-9A3.5 3.5 0 0 1 12 8.2 3.5 3.5 0 0 1 18.5 11c0 4.7-6.5 9-6.5 9z" />
+      <path d="M12 3.5v1.5M7 5l1 1.3M17 5l-1 1.3" />
+    </>
+  ),
+  ideate: (
+    <>
+      <path d="M9.5 18h5" />
+      <path d="M10 21h4" />
+      <path d="M12 3a6 6 0 0 0-3.8 10.6c.7.6 1.3 1.4 1.3 2.4h5c0-1 .6-1.8 1.3-2.4A6 6 0 0 0 12 3z" />
+    </>
+  ),
+  prototype: (
+    <>
+      <rect x="3" y="3" width="8" height="8" rx="2" />
+      <rect x="13" y="13" width="8" height="8" rx="2" />
+      <path d="M11 7h4a2 2 0 0 1 2 2v4" />
+    </>
+  ),
+};
+
 function ProcessStep({ icon, t, d }: { icon: string; t: string; d: string }) {
   return (
-    <div className="flex flex-col items-center gap-[14px] text-center">
-      <div className="flex size-[64px] items-center justify-center rounded-[14px] border border-[#292929] border-solid bg-[#141414] text-[26px]">
-        {icon}
-      </div>
-      <div className="flex flex-col gap-[4px]">
-        <span className="font-['Syne'] font-bold text-[20px] text-white">{t}</span>
-        <span className="font-['Syne'] text-[18px] text-[#7d8590]">{d}</span>
+    <div className="flex max-w-[250px] flex-col items-start gap-[16px] text-left">
+      <svg
+        width="40"
+        height="40"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#ff5c3a"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        {processIcons[icon]}
+      </svg>
+      <div className="flex flex-col gap-[6px]">
+        <span className="font-['Syne'] font-bold text-[24px] text-white">{t}</span>
+        <span className="font-['Syne'] text-[18px] leading-[1.5] text-[#9aa0a8]">{d}</span>
       </div>
     </div>
+  );
+}
+
+function StepChevron() {
+  return (
+    <svg
+      width="34"
+      height="34"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#5a5a5a"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="mt-[4px] shrink-0"
+    >
+      <polyline points="9 6 15 12 9 18" />
+    </svg>
   );
 }
 
@@ -343,9 +400,12 @@ export default function BlockExplorer() {
             define the core challenges. Concepts were prototyped, tested, and refined across several cycles — keeping the
             solution user-friendly and visually distinct while staying aligned with functional goals.
           </p>
-          <div className="mt-[16px] flex justify-center gap-[90px]">
-            {processSteps.map((s) => (
-              <ProcessStep key={s.t} {...s} />
+          <div className="mt-[16px] flex items-start justify-center gap-[36px]">
+            {processSteps.map((s, i) => (
+              <Fragment key={s.t}>
+                <ProcessStep {...s} />
+                {i < processSteps.length - 1 && <StepChevron />}
+              </Fragment>
             ))}
           </div>
         </section>

@@ -4,10 +4,12 @@ export default function AccentMask({
   src,
   className = "",
   stretch = false,
+  color,
 }: {
   src: string;
   className?: string;
   stretch?: boolean;
+  color?: string;
 }) {
   const size = stretch ? "100% 100%" : "contain";
   return (
@@ -18,6 +20,7 @@ export default function AccentMask({
         maskImage: `url(${src})`,
         WebkitMaskSize: size,
         maskSize: size,
+        ...(color ? { backgroundColor: color } : {}),
       }}
     />
   );

@@ -1,4 +1,7 @@
 import type { ReactNode } from "react";
+import AccentMask from "../components/AccentMask";
+
+const imgCounter = "/assets/15d72.svg";
 
 // Case study page — "Web3 Landing Page" (Whizrolls). Shares the app chrome
 // (header, sidebar, scrubber) via App; rendered inside the same scaled 1980px
@@ -28,14 +31,35 @@ const keySections = [
 
 const serif = "font-['Syne']";
 const body = "font-['Syne'] font-normal text-[#7d8590] text-[20px] leading-[1.6] tracking-[0.18px]";
-const label = "font-['Syne'] text-[18px] uppercase tracking-[3px] text-[#6b7280]";
 const cardBase = "rounded-[12px] border border-[#292929] border-solid bg-[#141414] p-[28px]";
 
-function Dot({ className = "" }: { className?: string }) {
+// Numbered teardrop counter badge, accent-tinted (matches the other case studies).
+function Counter({ n }: { n: number }) {
   return (
-    <span
-      className={`absolute size-[14px] rounded-full bg-[#ff5c3a] shadow-[0_0_14px_2px_rgba(255,92,58,0.55)] ${className}`}
-    />
+    <div className="relative size-[40px] shrink-0">
+      <AccentMask src={imgCounter} className="absolute inset-0 size-full" stretch />
+      <span className="absolute inset-0 flex items-center justify-center font-['Syne'] font-bold text-[18px] leading-none text-white">
+        {n}
+      </span>
+    </div>
+  );
+}
+
+function SectionPill({ children }: { children: ReactNode }) {
+  return (
+    <div className="inline-flex w-fit items-center rounded-[6px] border border-[#ff5c3a] border-solid bg-black px-[16px] py-[6px] font-['Syne'] text-[18px] uppercase tracking-[1.6px] text-[#ff5c3a] shadow-[0_0_24px_0_rgba(255,92,58,0.25)]">
+      {children}
+    </div>
+  );
+}
+
+// Section head: pill + numbered counter, aligned left or right along the timeline.
+function SectionHead({ n, label, align = "left" }: { n: number; label: string; align?: "left" | "right" }) {
+  return (
+    <div className={`flex items-center gap-[14px] ${align === "right" ? "justify-end" : ""}`}>
+      <SectionPill>{label}</SectionPill>
+      <Counter n={n} />
+    </div>
   );
 }
 
@@ -70,21 +94,18 @@ export default function Web3Website() {
 
         {/* Timeline */}
         <section className="relative">
-          <div className="pointer-events-none absolute bottom-[20px] left-[6px] top-[16px] border-l border-dashed border-[#33383f]" />
           <div className="flex flex-col gap-[120px]">
             {/* Intro heading */}
-            <div className="relative pl-[80px]">
-              <Dot className="left-0 top-[16px]" />
+            <div className="relative">
               <h2 className={`${serif} font-bold text-white text-[46px] leading-[1.2] max-w-[720px]`}>
                 A Web3 experience that balances innovation with clarity
               </h2>
             </div>
 
             {/* 01 — Problems & Challenges (right) */}
-            <div className="relative flex justify-end pr-[80px]">
-              <Dot className="right-0 top-[8px]" />
+            <div className="relative flex justify-end">
               <div className="flex max-w-[760px] flex-col items-end gap-[20px] text-right">
-                <span className={label}>01 — Problems &amp; Challenges</span>
+                <SectionHead n={1} label="Problems & Challenges" align="right" />
                 <div className="flex flex-col gap-[14px]">
                   {problems.map((p) => (
                     <p key={p} className="font-['Syne'] text-[20px] leading-[1.5] text-[#c1c1c1]">
@@ -96,10 +117,9 @@ export default function Web3Website() {
             </div>
 
             {/* 02 — Results (left) */}
-            <div className="relative pl-[80px]">
-              <Dot className="left-0 top-[8px]" />
+            <div className="relative">
               <div className="flex max-w-[760px] flex-col gap-[20px]">
-                <span className={label}>02 — Results</span>
+                <SectionHead n={2} label="Results" align="left" />
                 <p className={body}>
                   The final design helped elevate Whizrolls' digital presence with a clean, confident landing page that
                   effectively communicates what they do and why it matters.
@@ -116,10 +136,9 @@ export default function Web3Website() {
             </div>
 
             {/* 03 — Design Solution (right) */}
-            <div className="relative flex justify-end pr-[80px]">
-              <Dot className="right-0 top-[8px]" />
+            <div className="relative flex justify-end">
               <div className="flex max-w-[760px] flex-col items-end gap-[20px] text-right">
-                <span className={label}>03 — Design Solution</span>
+                <SectionHead n={3} label="Design Solution" align="right" />
                 <p className={`${body} text-right`}>
                   The process began with defining content structure and user flow around the target audience's
                   expectations — wireframes outlined the hero, feature highlights, community engagement, and

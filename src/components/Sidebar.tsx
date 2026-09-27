@@ -279,15 +279,23 @@ export default function Sidebar() {
   };
 
   // ---- Icon rail ----
+  // The selected feature is highlighted with the scrubber colour (same hue as the
+  // top loading bar). The cursor is the default selection when no tool is active.
   const iconBtn = (active: boolean) =>
     `flex items-center justify-center rounded-[10px] size-[40px] shrink-0 cursor-pointer transition-colors ${
-      active ? "bg-[rgba(255,92,58,0.2)]" : "hover:bg-[rgba(255,255,255,0.06)]"
+      active ? "" : "hover:bg-[rgba(255,255,255,0.06)]"
     }`;
-  const Img = ({ src, pad }: { src: string; pad?: boolean }) => (
+  const btnStyle = (active: boolean) =>
+    active ? { backgroundColor: "color-mix(in srgb, var(--scrubber) 22%, transparent)" } : undefined;
+  // Masked icon: scrubber-coloured when its feature is selected, neutral grey otherwise.
+  const Icon = ({ src, active, pad }: { src: string; active: boolean; pad?: boolean }) => (
     <div className="relative size-[24px]">
-      <div className={pad ? "absolute inset-[12.5%]" : "absolute inset-0"}>
-        <img alt="" className="block max-w-none size-full" src={src} />
-      </div>
+      <AccentMask
+        src={src}
+        stretch
+        color={active ? "var(--scrubber)" : "#9aa0a8"}
+        className={pad ? "absolute inset-[12.5%]" : "absolute inset-0 size-full"}
+      />
     </div>
   );
 
@@ -296,17 +304,23 @@ export default function Sidebar() {
       <div className="flex flex-col gap-[40px] items-center justify-center px-[11px] py-[20px] relative w-[72px]">
         <div className="flex flex-col gap-[18px] items-center">
           <button
-            className={iconBtn(menu === "cursor")}
+            className={iconBtn(tool === null)}
+            style={btnStyle(tool === null)}
             onClick={(e) => openMenu("cursor", e)}
             title="Cursor design"
           >
-            <Img src={imgArrowPointer} />
+            <Icon src={imgArrowPointer} active={tool === null} />
           </button>
-          <button className={iconBtn(tool === "marquee")} onClick={() => pickTool("marquee")} title="Marquee">
-            <AccentMask src={imgGrid} className="size-[24px]" stretch />
+          <button
+            className={iconBtn(tool === "marquee")}
+            style={btnStyle(tool === "marquee")}
+            onClick={() => pickTool("marquee")}
+            title="Marquee"
+          >
+            <Icon src={imgGrid} active={tool === "marquee"} />
           </button>
           <button className={iconBtn(false)} onClick={addNote} title="Add note">
-            <Img src={imgNoteBlank} />
+            <Icon src={imgNoteBlank} active={false} />
           </button>
         </div>
 
@@ -317,17 +331,17 @@ export default function Sidebar() {
         </div>
 
         <div className="flex flex-col gap-[18px] items-center">
-          <button className={iconBtn(tool === "doodle")} onClick={() => pickTool("doodle")} title="Doodle">
-            <Img src={imgPen} />
+          <button className={iconBtn(tool === "doodle")} style={btnStyle(tool === "doodle")} onClick={() => pickTool("doodle")} title="Doodle">
+            <Icon src={imgPen} active={tool === "doodle"} />
           </button>
-          <button className={iconBtn(tool === "search")} onClick={() => pickTool("search")} title="Search">
-            <Img src={imgFeSearch} />
+          <button className={iconBtn(tool === "search")} style={btnStyle(tool === "search")} onClick={() => pickTool("search")} title="Search">
+            <Icon src={imgFeSearch} active={tool === "search"} />
           </button>
-          <button className={iconBtn(tool === "text")} onClick={() => pickTool("text")} title="Text box">
-            <Img src={imgText} pad />
+          <button className={iconBtn(tool === "text")} style={btnStyle(tool === "text")} onClick={() => pickTool("text")} title="Text box">
+            <Icon src={imgText} active={tool === "text"} pad />
           </button>
           <button className={iconBtn(false)} onClick={exitTools} title="Hand">
-            <Img src={imgHand} pad />
+            <Icon src={imgHand} active={false} pad />
           </button>
         </div>
 
@@ -337,8 +351,8 @@ export default function Sidebar() {
           </div>
         </div>
 
-        <button className={iconBtn(menu === "color")} onClick={(e) => openMenu("color", e)} title="Accent colour">
-          <span className="block size-[24px] rounded-[5px]" style={{ backgroundColor: accent }} />
+        <button className={iconBtn(menu === "color")} style={btnStyle(menu === "color")} onClick={(e) => openMenu("color", e)} title="Accent colour">
+          <span className="block size-[38px] rounded-[5px]" style={{ backgroundColor: accent }} />
         </button>
       </div>
 

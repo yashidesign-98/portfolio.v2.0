@@ -10,6 +10,14 @@ const imgGroup = `${assetPathPrefix}/0db41.svg`;
 const imgVector3 = `${assetPathPrefix}/9a87a.svg`;
 const imgGroup1 = `${assetPathPrefix}/fc0f3.svg`;
 
+function scrollToContact() {
+  const el = document.getElementById("section-contact");
+  if (!el) return;
+  const headerH = document.querySelector("header")?.getBoundingClientRect().height ?? 0;
+  const y = el.getBoundingClientRect().top + window.scrollY - headerH - 12;
+  window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+}
+
 export default function Hero() {
   return (
     <div className="relative size-full" data-node-id="1:7411">
@@ -45,16 +53,16 @@ export default function Hero() {
             <p className="leading-[1.45] whitespace-pre">{`View Work  →`}</p>
           </div>
         </div>
-        <a href="https://www.linkedin.com/in/yashi-bhatnagar/" target="_blank" rel="noopener noreferrer" className="border border-[#ff5c3a] border-solid content-stretch flex items-center justify-center p-[16px] relative rounded-[6px] shrink-0 cursor-pointer transition-transform hover:-translate-y-0.5" data-node-id="1:7427" data-name="Primary button">
+        <button onClick={scrollToContact} className="border border-[#ff5c3a] border-solid content-stretch flex items-center justify-center p-[16px] relative rounded-[6px] shrink-0 cursor-pointer transition-transform hover:-translate-y-0.5" data-node-id="1:7427" data-name="Primary button">
           <div className="[word-break:break-word] flex flex-col font-['Syne'] font-bold justify-center leading-[0] relative shrink-0 text-[#ff5c3a] text-[18px] text-center tracking-[0.18px] whitespace-nowrap" data-node-id="1:7428">
             <p className="leading-[1.45]">Let’s Talk</p>
           </div>
-        </a>
+        </button>
       </div>
       <div className="-translate-x-full -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Syne'] font-medium justify-center leading-[0] left-[1310px] text-[#7d8590] text-[24px] text-right top-[736px] tracking-[-0.12px] w-[560px]" data-node-id="1:7429">
         <p className="leading-[1.45]">I design fresh experiences from scratch - and sprinkling some magic on existing ones.</p>
       </div>
-      <div className="absolute h-[851px] left-0 top-0 w-[1748px]" data-node-id="1:7430" data-name="Marching ants">
+      <div className="pointer-events-none absolute h-[851px] left-0 top-0 w-[1748px]" data-node-id="1:7430" data-name="Marching ants">
         <div className="absolute h-[2px] left-0 overflow-clip top-0 w-[1748px]" data-node-id="1:7431" data-name="Top edge">
           <motion.div className="absolute h-0 left-[-240px] top-px w-[2228px]" data-node-id="1:7432" data-name="Top ants">
             <div className="absolute inset-[-2px_0_0_0]">

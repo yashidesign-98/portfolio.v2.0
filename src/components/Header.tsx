@@ -1,4 +1,5 @@
-﻿import AccentMask from "./AccentMask";
+﻿import { useEffect, useState } from "react";
+import AccentMask from "./AccentMask";
 
 const assetPathPrefix = "/assets";
 const imgStar1 = `${assetPathPrefix}/40895.svg`;
@@ -7,6 +8,7 @@ const navItems: { label: string; target: string }[] = [
   { label: "Home", target: "top" },
   { label: "About", target: "section-about" },
   { label: "Work", target: "section-work" },
+  { label: "Experience", target: "section-experience" },
   { label: "Skills", target: "section-toolkit" },
   { label: "Contact", target: "section-contact" },
 ];
@@ -41,6 +43,37 @@ function scrollTo(target: string) {
 }
 
 export default function Header() {
+  // Scroll-spy: highlight the nav item for the section currently in view. The
+  // page renders inside a scaled canvas, so we read live bounding rects.
+  const [active, setActive] = useState("top");
+  useEffect(() => {
+    function onScroll() {
+      if (window.location.hash) {
+        setActive("");
+        return;
+      }
+      const headerH = document.querySelector("header")?.getBoundingClientRect().height ?? 96;
+      const threshold = headerH + 160;
+      let current = "top";
+      for (const item of navItems) {
+        if (item.target === "top") continue;
+        const el = document.getElementById(item.target);
+        if (el && el.getBoundingClientRect().top <= threshold) current = item.target;
+      }
+      if (window.scrollY < 200) current = "top";
+      setActive(current);
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    window.addEventListener("hashchange", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      window.removeEventListener("hashchange", onScroll);
+    };
+  }, []);
+
   return (
     <header className="bg-[#0d0d0d]/60 backdrop-blur-md border-b border-[#1e1e1e] border-solid flex items-center justify-between px-[64px] h-[96px] w-[1980px]" data-node-id="1:7730">
       <button onClick={() => scrollTo("top")} className="flex gap-[4px] items-center shrink-0 cursor-pointer" data-node-id="1:7731">
@@ -50,18 +83,26 @@ export default function Header() {
         </div>
       </button>
       <nav className="flex gap-[32px] items-center shrink-0" data-node-id="1:7734">
-        {navItems.map((item) => (
-          <button
-            key={item.label}
-            onClick={() => scrollTo(item.target)}
-            className="group relative font-['Syne'] font-medium text-[20px] text-center text-[#7d8590] tracking-[-0.1px] whitespace-nowrap cursor-pointer pb-[4px] transition-colors hover:text-white"
-          >
-            {item.label}
-            {/* Orange underline grows in from the left on hover — only under the
-                item being hovered. */}
-            <span className="pointer-events-none absolute bottom-0 left-0 h-[2px] w-full origin-left scale-x-0 bg-[#ff5c3a] transition-transform duration-300 ease-out group-hover:scale-x-100" />
-          </button>
-        ))}
+        {navItems.map((item) => {
+          const isActive = active === item.target;
+          return (
+            <button
+              key={item.label}
+              onClick={() => scrollTo(item.target)}
+              className={`group relative font-['Syne'] font-medium text-[20px] text-center tracking-[-0.1px] whitespace-nowrap cursor-pointer pb-[4px] transition-colors ${
+                isActive ? "text-white" : "text-[#7d8590] hover:text-white"
+              }`}
+            >
+              {item.label}
+              {/* Orange underline — shown for the active section, and on hover. */}
+              <span
+                className={`pointer-events-none absolute bottom-0 left-0 h-[2px] w-full origin-left bg-[#ff5c3a] transition-transform duration-300 ease-out ${
+                  isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                }`}
+              />
+            </button>
+          );
+        })}
       </nav>
       <div className="flex flex-wrap gap-[24px] items-center shrink-0" data-node-id="1:7742">
         <a

@@ -10,6 +10,9 @@ import MedicalApp from "./pages/MedicalApp";
 import BlockExplorer from "./pages/BlockExplorer";
 import Web3Website from "./pages/Web3Website";
 import FitnessApp from "./pages/FitnessApp";
+import KitschOdyssey from "./pages/KitschOdyssey";
+import Jharokhas from "./pages/Jharokhas";
+import SummerRemix from "./pages/SummerRemix";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Work from "./sections/Work";
@@ -139,6 +142,12 @@ export default function App() {
             <Web3Website />
           ) : route === "fitness-app-experience" ? (
             <FitnessApp />
+          ) : route === "kitsch-odyssey" ? (
+            <KitschOdyssey />
+          ) : route === "jharokhas" ? (
+            <Jharokhas />
+          ) : route === "summer-remix" ? (
+            <SummerRemix />
           ) : (
             <div className="relative z-0 flex w-[1980px] flex-col items-center gap-[60px] pt-[124px] pb-[88px]">
             <TopPill />
