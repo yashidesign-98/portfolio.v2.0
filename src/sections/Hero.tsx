@@ -10,8 +10,8 @@ const imgGroup = `${assetPathPrefix}/0db41.svg`;
 const imgVector3 = `${assetPathPrefix}/9a87a.svg`;
 const imgGroup1 = `${assetPathPrefix}/fc0f3.svg`;
 
-function scrollToContact() {
-  const el = document.getElementById("section-contact");
+function scrollToSection(id: string) {
+  const el = document.getElementById(id);
   if (!el) return;
   const headerH = document.querySelector("header")?.getBoundingClientRect().height ?? 0;
   const y = el.getBoundingClientRect().top + window.scrollY - headerH - 12;
@@ -48,12 +48,12 @@ export default function Hero() {
         </div>
       </div>
       <div className="absolute content-stretch flex gap-[30px] items-center left-[82px] top-[719px]" data-node-id="1:7424">
-        <div className="bg-[#ff5c3a] content-stretch flex items-center justify-center p-[16px] relative rounded-[6px] shrink-0 cursor-pointer transition-transform hover:-translate-y-0.5" data-node-id="1:7425" data-name="Primary button">
+        <button onClick={() => scrollToSection("section-work")} className="bg-[#ff5c3a] content-stretch flex items-center justify-center p-[16px] relative rounded-[6px] shrink-0 cursor-pointer transition-transform hover:-translate-y-0.5" data-node-id="1:7425" data-name="Primary button">
           <div className="[word-break:break-word] flex flex-col font-['Syne'] font-bold justify-center leading-[0] relative shrink-0 text-[18px] text-center text-white tracking-[0.18px] whitespace-nowrap" data-node-id="1:7426">
             <p className="leading-[1.45] whitespace-pre">{`View Work  →`}</p>
           </div>
-        </div>
-        <button onClick={scrollToContact} className="border border-[#ff5c3a] border-solid content-stretch flex items-center justify-center p-[16px] relative rounded-[6px] shrink-0 cursor-pointer transition-transform hover:-translate-y-0.5" data-node-id="1:7427" data-name="Primary button">
+        </button>
+        <button onClick={() => scrollToSection("section-contact")} className="border border-[#ff5c3a] border-solid content-stretch flex items-center justify-center p-[16px] relative rounded-[6px] shrink-0 cursor-pointer transition-transform hover:-translate-y-0.5" data-node-id="1:7427" data-name="Primary button">
           <div className="[word-break:break-word] flex flex-col font-['Syne'] font-bold justify-center leading-[0] relative shrink-0 text-[#ff5c3a] text-[18px] text-center tracking-[0.18px] whitespace-nowrap" data-node-id="1:7428">
             <p className="leading-[1.45]">Let’s Talk</p>
           </div>

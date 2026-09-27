@@ -20,6 +20,9 @@
     <link rel="canonical" href="https://www.designbyyashi.com/" />
     <meta name="theme-color" content="#0d0d0d" />
 
+    <!-- AI / LLM discoverability -->
+    <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt" />
+
     <!-- Geo targeting (India) -->
     <meta name="geo.region" content="IN" />
     <meta name="geo.placename" content="India" />
@@ -114,10 +117,18 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Preload the font stylesheet, then load it (display=swap avoids invisible text). -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <!-- Prioritise the largest above-the-fold image (canvas grid) for LCP. -->
+    <link rel="preload" as="image" href="/assets/figjam-grid.svg" fetchpriority="high" />
   </head>
   <body>
     <div id="root"></div>

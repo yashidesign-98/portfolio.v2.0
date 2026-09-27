@@ -116,6 +116,42 @@ export default function App() {
 
       <Scrubber progress={progress} />
 
+      {/* Accessible, machine-readable summary for screen readers, search engines
+          and AI crawlers — the visual layout below is a scaled canvas built from
+          positioned divs, so this mirrors the same content as real semantic HTML. */}
+      <main>
+        <section className="sr-only">
+          <h1>Yashi Bhatnagar — Senior UX/UI Designer in India</h1>
+          <p>
+            Yashi Bhatnagar is a Senior UX/UI and product designer based in India (Delhi NCR) with 5+ years of
+            experience designing enterprise SaaS, Web3/blockchain, cloud platform and mobile app products. She is a
+            Google-certified UX design expert available for full-time roles, freelance collaboration and design
+            consulting.
+          </p>
+          <h2>Expertise</h2>
+          <ul>
+            <li>UX design, UI design and product design</li>
+            <li>Design systems and component libraries</li>
+            <li>User research, usability testing, wireframing and prototyping</li>
+            <li>Figma, interaction design and accessibility</li>
+            <li>Enterprise SaaS, Web3/blockchain, cloud platform and mobile app design</li>
+          </ul>
+          <h2>Selected work</h2>
+          <ul>
+            <li>Public Cloud Platform — enterprise cloud console UX</li>
+            <li>Medical App (Cure First) — doctor discovery and appointment booking</li>
+            <li>Fitness App (ZenFit) — at-home fitness experience</li>
+            <li>Block Explorer (Blockscope) — Web3 / blockchain data visualization</li>
+            <li>Web3 Landing Page (Whizrolls) — rollup platform website</li>
+            <li>AI Jam — generative poster series (Kitsch Odyssey, Jharokhas, Summer Remix)</li>
+          </ul>
+          <h2>Contact</h2>
+          <p>
+            Email <a href="mailto:bhatnagar2898@gmail.com">bhatnagar2898@gmail.com</a> or connect on{" "}
+            <a href="https://www.linkedin.com/in/yashi-bhatnagar/">LinkedIn</a>.
+          </p>
+        </section>
+
       <div ref={wrapRef} id="top" className="w-full overflow-hidden" style={{ height: wrapHeight, marginTop: 40 }}>
         <div
           ref={pageRef}
@@ -129,6 +165,8 @@ export default function App() {
           <img
             alt=""
             src={gridUrl}
+            fetchPriority="high"
+            decoding="async"
             className="pointer-events-none absolute left-0 top-0 w-[1980px] select-none"
           />
 
@@ -182,6 +220,11 @@ export default function App() {
           )}
         </div>
       </div>
+      </main>
+
+      <footer className="sr-only">
+        <p>© Yashi Bhatnagar — UX/UI Designer, India. designbyyashi.com</p>
+      </footer>
     </>
   );
 }
