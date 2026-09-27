@@ -107,6 +107,22 @@ body {
   animation: march-x-rev 1.5s linear infinite;
 }
 
+/* Responsive marching-ants border (SVG rect) used on mobile — scales to any box. */
+@keyframes ants-dash {
+  to {
+    stroke-dashoffset: -40px;
+  }
+}
+.ants-rect {
+  animation: ants-dash 1s linear infinite;
+}
+
+/* Dotted canvas background for the mobile layout. */
+.dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
 /* Gentle float for the hero annotation badges. Uses the independent CSS
    `translate` property (not `transform`) so it composes with the Tailwind
    `-translate-x-1/2` transforms on the badges instead of overriding them. */

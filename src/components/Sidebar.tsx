@@ -134,12 +134,29 @@ export default function Sidebar() {
     document.documentElement.style.setProperty("--scrubber", scrubberFor(accent));
   }, [accent]);
 
+  // Custom cursors only apply on real desktop pointers — never on touch/mobile
+  // (the follower is portaled to <body>, so it must be gated here).
+  const [isDesktop, setIsDesktop] = useState(true);
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px) and (pointer: fine)");
+    const on = () => setIsDesktop(mq.matches);
+    on();
+    mq.addEventListener("change", on);
+    return () => mq.removeEventListener("change", on);
+  }, []);
+
   // Apply the chosen cursor to the whole page. Follower designs hide the native
   // cursor; keyword designs set it directly.
   const follower = cursorStyle === "dot-ring" || cursorStyle === "invert";
   useEffect(() => {
-    document.documentElement.style.cursor = cursorStyle === "auto" ? "" : follower ? "none" : cursorStyle;
-  }, [cursorStyle, follower]);
+    document.documentElement.style.cursor = !isDesktop
+      ? ""
+      : cursorStyle === "auto"
+        ? ""
+        : follower
+          ? "none"
+          : cursorStyle;
+  }, [cursorStyle, follower, isDesktop]);
 
   // Escape cancels whatever is active.
   useEffect(() => {
@@ -356,8 +373,8 @@ export default function Sidebar() {
         </button>
       </div>
 
-      {/* Follower cursor design (dot & ring / invert). */}
-      {follower && <CustomCursor design={cursorStyle as "dot-ring" | "invert"} accent={accent} />}
+      {/* Follower cursor design (dot & ring / invert) — desktop pointers only. */}
+      {follower && isDesktop && <CustomCursor design={cursorStyle as "dot-ring" | "invert"} accent={accent} />}
 
       {/* ---- Portaled overlays (escape the scaled sidebar wrapper) ---- */}
       {createPortal(

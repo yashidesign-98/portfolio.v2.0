@@ -14,6 +14,7 @@ import KitschOdyssey from "./pages/KitschOdyssey";
 import Jharokhas from "./pages/Jharokhas";
 import SummerRemix from "./pages/SummerRemix";
 import MobileHome from "./mobile/MobileHome";
+import MobileChrome from "./mobile/MobileChrome";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Work from "./sections/Work";
@@ -103,6 +104,7 @@ export default function App() {
       {isHome && (
         <div className="lg:hidden">
           <MobileHome />
+          <MobileChrome progress={progress} />
         </div>
       )}
 

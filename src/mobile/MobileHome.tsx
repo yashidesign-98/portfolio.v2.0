@@ -177,7 +177,7 @@ export default function MobileHome() {
   };
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-[#0d0d0d] font-['Syne'] text-white">
+    <div className="dot-grid min-h-screen overflow-x-hidden bg-[#0d0d0d] pb-[100px] font-['Syne'] text-white">
       {/* Header */}
       <header className="sticky top-0 z-50 flex items-center justify-between border-b border-[#1e1e1e] bg-[#0d0d0d]/90 px-5 py-4 backdrop-blur">
         <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-1">
@@ -218,30 +218,71 @@ export default function MobileHome() {
       )}
 
       {/* Hero */}
-      <section id="m-hero" className="px-5 pt-12 pb-14">
-        <h1 className="break-words text-[40px] font-extrabold leading-[1.05] tracking-[1px] sm:text-[56px] md:text-[80px]">
-          Yashi Bhatnagar
-        </h1>
-        <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#ff5c3a] px-5 py-2">
-          <span className="size-2 rounded-full bg-[#ff5c3a]" />
-          <span className="font-bold">Senior UX Designer</span>
-        </div>
-        <p className="mt-5 text-[18px] leading-[1.5] text-[#abacb3]">
-          I design fresh experiences from scratch — and sprinkle some magic on existing ones.
-        </p>
-        <div className="mt-7 flex flex-wrap gap-3">
-          <button
-            onClick={() => go("#m-work")}
-            className="rounded-md bg-[#ff5c3a] px-6 py-3.5 font-bold text-white"
+      <section id="m-hero" className="px-4 pt-8 pb-12">
+        <div className="relative px-5 pb-11 pt-12">
+          {/* Marching-ants animated border */}
+          <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" preserveAspectRatio="none">
+            <rect
+              className="ants-rect"
+              x="1"
+              y="1"
+              width="calc(100% - 2px)"
+              height="calc(100% - 2px)"
+              fill="none"
+              stroke="#ff5c3a"
+              strokeWidth="1.5"
+              strokeDasharray="12 8"
+            />
+          </svg>
+          {/* Corner squares */}
+          <span className="absolute -left-1 -top-1 size-[10px] bg-[#ff5c3a]" />
+          <span className="absolute -right-1 -top-1 size-[10px] bg-[#ff5c3a]" />
+          <span className="absolute -bottom-1 -left-1 size-[10px] bg-[#ff5c3a]" />
+          <span className="absolute -bottom-1 -right-1 size-[10px] bg-[#ff5c3a]" />
+
+          {/* Floating annotation badges */}
+          <div className="float-badge absolute right-3 top-4 z-10 rounded-lg border border-[#7d8590] bg-[#1e1e1e] px-3 py-1.5 text-[12px] text-[#c1c1c1]">
+            5+ yrs exp
+          </div>
+          <div
+            className="float-badge absolute right-4 top-[86px] z-10 rounded-lg border border-[#7d8590] bg-[#1e1e1e] px-3 py-1.5 text-[12px] text-[#c1c1c1]"
+            style={{ animationDelay: "-1.3s" }}
           >
-            View Work →
-          </button>
-          <button
-            onClick={() => go("#m-contact")}
-            className="rounded-md border border-[#ff5c3a] px-6 py-3.5 font-bold text-[#ff5c3a]"
-          >
-            Let's Talk
-          </button>
+            Google Certified
+          </div>
+
+          {/* Layered name (outline behind, solid in front) */}
+          <div className="relative">
+            <h1 className="text-[44px] font-extrabold leading-[0.98] tracking-[1px] text-transparent [-webkit-text-stroke:1.5px_rgba(255,92,58,0.45)] sm:text-[64px]">
+              Yashi
+              <br />
+              Bhatnagar
+            </h1>
+            <h1 className="absolute left-[5px] top-[5px] text-[44px] font-extrabold leading-[0.98] tracking-[1px] text-white sm:text-[64px]">
+              Yashi
+              <br />
+              Bhatnagar
+            </h1>
+          </div>
+
+          <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#ff5c3a] px-5 py-2">
+            <span className="size-2 rounded-full bg-[#ff5c3a]" />
+            <span className="font-bold">Senior UX Designer</span>
+          </div>
+          <p className="mt-5 text-[18px] leading-[1.5] text-[#abacb3]">
+            I design fresh experiences from scratch — and sprinkle some magic on existing ones.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <button onClick={() => go("#m-work")} className="rounded-md bg-[#ff5c3a] px-6 py-3.5 font-bold text-white">
+              View Work →
+            </button>
+            <button
+              onClick={() => go("#m-contact")}
+              className="rounded-md border border-[#ff5c3a] px-6 py-3.5 font-bold text-[#ff5c3a]"
+            >
+              Let's Talk
+            </button>
+          </div>
         </div>
       </section>
 
