@@ -1,3 +1,4 @@
+import { useState } from "react";
 import AccentMask from "../components/AccentMask";
 ﻿const assetPathPrefix = "/assets";
 const imgGroup = `${assetPathPrefix}/93bc3.svg`;
@@ -29,6 +30,15 @@ function EvaLinkedinOutline({ className }: { className?: string }) {
 }
 
 export default function Contact() {
+  const [email, setEmail] = useState("");
+  // No backend — just open the visitor's mail client, pre-filled.
+  const sendInvite = () => {
+    const subject = encodeURIComponent("Project Invite for Yashi");
+    const body = encodeURIComponent(
+      `Hi Yashi,\n\nI'd like to invite you to a project.\n\nYou can reach me at: ${email || "(add your email)"}\n\nThanks!`
+    );
+    window.location.href = `mailto:bhatnagar2898@gmail.com?subject=${subject}&body=${body}`;
+  };
   return (
     <div className="relative size-full" data-node-id="1:7682">
       <div className="-translate-x-1/2 absolute bg-[#101010] border border-[#ff5c3a] border-solid content-stretch flex items-center justify-center left-[calc(50%+0.5px)] overflow-clip px-[24px] py-[8px] shadow-[4px_4px_20px_0px_rgba(255,92,58,0.2)] top-[30px]" data-node-id="1:7683">
@@ -63,11 +73,14 @@ export default function Contact() {
               <input
                 type="email"
                 placeholder="your@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && sendInvite()}
                 className="absolute inset-0 bg-transparent font-['Syne'] font-normal leading-[1.45] pl-[22px] text-[14px] text-white tracking-[0.56px] placeholder:text-[#393939] focus:outline-none"
                 data-node-id="1:7699"
               />
             </div>
-            <button className="bg-[#ff5c3a] content-stretch flex h-[50px] items-center justify-center p-[16px] relative rounded-[6px] shrink-0 cursor-pointer transition-transform hover:-translate-y-0.5" data-node-id="1:7700">
+            <button onClick={sendInvite} className="bg-[#ff5c3a] content-stretch flex h-[50px] items-center justify-center p-[16px] relative rounded-[6px] shrink-0 cursor-pointer transition-transform hover:-translate-y-0.5" data-node-id="1:7700">
               <div className="[word-break:break-word] flex flex-col font-['Syne'] font-bold justify-center leading-[0] relative shrink-0 text-[18px] text-center text-white tracking-[0.18px] whitespace-nowrap" data-node-id="1:7701">
                 <p className="leading-[1.45] whitespace-pre">{`Send Invite  →`}</p>
               </div>
