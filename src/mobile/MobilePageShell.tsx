@@ -48,11 +48,11 @@ export default function MobilePageShell({
 
 // Small shared building blocks for the detail pages.
 
-export function MSectionPill({ n, label, color = "#ff5c3a" }: { n?: string; label: string; color?: string }) {
+export function MSectionPill({ n, label }: { n?: string; label: string }) {
   return (
     <div
       className="mb-5 inline-flex items-center gap-2 rounded-full border bg-black px-4 py-1.5 text-[12px] uppercase tracking-[2px]"
-      style={{ borderColor: `${color}99`, color }}
+      style={{ borderColor: "rgba(var(--accent-rgb), 0.6)", color: "var(--accent)" }}
     >
       {n && <span>{n}</span>}
       {n && <span>·</span>}
