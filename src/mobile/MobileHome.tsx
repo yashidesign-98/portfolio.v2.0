@@ -250,7 +250,7 @@ export default function MobileHome() {
               width="calc(100% - 2px)"
               height="calc(100% - 2px)"
               fill="none"
-              stroke="#ff5c3a"
+              style={{ stroke: "var(--accent)" }}
               strokeWidth="0.75"
               strokeDasharray="12 8"
             />
@@ -263,7 +263,10 @@ export default function MobileHome() {
 
           {/* Layered name (outline behind, solid in front) */}
           <div className="relative">
-            <h1 className="text-[36px] font-extrabold leading-[0.98] tracking-[0px] text-transparent [-webkit-text-stroke:1.5px_rgba(255,92,58,0.45)] sm:text-[60px]">
+            <h1
+              className="text-[36px] font-extrabold leading-[0.98] tracking-[0px] text-transparent sm:text-[60px]"
+              style={{ WebkitTextStroke: "1.5px rgba(var(--accent-rgb), 0.45)" }}
+            >
               Yashi
               <br />
               Bhatnagar

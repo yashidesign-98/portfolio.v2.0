@@ -36,6 +36,17 @@
 .border-\[rgba\(255\,92\,58\,0\.3\)\] {
   border-color: rgba(var(--accent-rgb), 0.3) !important;
 }
+/* Opacity-suffixed accent classes used by the mobile layout. */
+.border-\[\#ff5c3a\]\/60 {
+  border-color: rgba(var(--accent-rgb), 0.6) !important;
+}
+.border-\[\#ff5c3a\]\/40 {
+  border-color: rgba(var(--accent-rgb), 0.4) !important;
+}
+.bg-\[rgba\(255\2c 92\2c 58\2c 0\.08\)\],
+.bg-\[rgba\(255\,92\,58\,0\.08\)\] {
+  background-color: rgba(var(--accent-rgb), 0.08) !important;
+}
 .shadow-\[0_12px_40px_0_rgba\(255\,92\,58\,0\.25\)\],
 .hover\:shadow-\[0_12px_40px_0_rgba\(255\,92\,58\,0\.25\)\]:hover {
   box-shadow: 0 12px 40px 0 rgba(var(--accent-rgb), 0.25) !important;
