@@ -36,7 +36,7 @@ export default function Scrubber({ progress }: { progress: number }) {
           />
         </div>
       </div>
-      <span className="font-mono text-[13px] tabular-nums text-[#7d8590]">{Math.round(p)}%</span>
+      <span className="font-mono text-[13px] tabular-nums text-[#abacb3]">{Math.round(p)}%</span>
     </div>
   );
 }

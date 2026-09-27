@@ -53,7 +53,7 @@ const research = [
 ];
 
 const heading = "font-['Syne'] font-bold text-white text-[40px] tracking-[1px]";
-const body = "font-['Syne'] font-normal text-[#7d8590] text-[20px] leading-[1.6] tracking-[0.18px]";
+const body = "font-['Syne'] font-normal text-[#abacb3] text-[20px] leading-[1.6] tracking-[0.18px]";
 
 // Small numbered section label, e.g. "01 - RESULTS".
 function SectionLabel({ n, label }: { n: string; label: string }) {
@@ -80,7 +80,7 @@ function StatChip({ color, label, value }: { color: string; label: string; value
     <div className="flex items-center gap-[10px] rounded-[10px] bg-[#1c1c1c] px-[14px] py-[10px]">
       <span className="size-[26px] shrink-0 rounded-[7px]" style={{ background: color }} />
       <div className="flex flex-col leading-tight">
-        <span className="font-['Syne'] text-[18px] uppercase tracking-[0.5px] text-[#7d8590]">{label}</span>
+        <span className="font-['Syne'] text-[18px] uppercase tracking-[0.5px] text-[#abacb3]">{label}</span>
         <span className="font-['Syne'] font-bold text-[18px] text-white">{value}</span>
       </div>
     </div>
@@ -285,7 +285,7 @@ function PersonCard() {
         <div className="size-[52px] shrink-0 rounded-full bg-[#2a2a2a]" />
         <div className="flex flex-col gap-[2px]">
           <span className="font-['Syne'] font-bold text-[20px] text-white">Daniel Kim</span>
-          <span className="font-['Syne'] text-[18px] text-[#7d8590]">User Persona</span>
+          <span className="font-['Syne'] text-[18px] text-[#abacb3]">User Persona</span>
         </div>
       </div>
       <div className="flex flex-col gap-[10px] pt-[6px]">
@@ -351,7 +351,7 @@ export default function BlockExplorer() {
           <SectionLabel n="01" label="Results" />
           <div className="flex flex-col gap-[6px]">
             <h2 className={heading}>Results</h2>
-            <span className="font-['Syne'] text-[18px] text-[#7d8590]">achieved with UX/UI improvements</span>
+            <span className="font-['Syne'] text-[18px] text-[#abacb3]">achieved with UX/UI improvements</span>
           </div>
           <div className="grid grid-cols-2 gap-x-[80px] gap-y-[22px]">
             {results.map((r) => (
@@ -374,7 +374,7 @@ export default function BlockExplorer() {
             <h2 className={heading}>
               What the stakeholders <span className="text-[#ff5c3a]">expected</span>
             </h2>
-            <span className="font-['Syne'] text-[18px] text-[#7d8590]">design challenges and objections</span>
+            <span className="font-['Syne'] text-[18px] text-[#abacb3]">design challenges and objections</span>
           </div>
           <div className="grid grid-cols-[1fr_720px] items-center gap-[70px]">
             <div className="flex flex-col gap-[22px]">
@@ -417,7 +417,7 @@ export default function BlockExplorer() {
             <h2 className={heading}>
               Primary <span className="text-[#ff5c3a]">Research</span>
             </h2>
-            <span className="font-['Syne'] text-[18px] text-[#7d8590]">what's behind the design solutions?</span>
+            <span className="font-['Syne'] text-[18px] text-[#abacb3]">what's behind the design solutions?</span>
           </div>
           <div className="grid w-full grid-cols-[400px_1fr] gap-[70px]">
             <PersonCard />
@@ -436,7 +436,7 @@ export default function BlockExplorer() {
             <h2 className={heading}>
               User <span className="text-[#ff5c3a]">Interface</span>
             </h2>
-            <span className="font-['Syne'] text-[18px] text-[#7d8590]">design & prototype solution</span>
+            <span className="font-['Syne'] text-[18px] text-[#abacb3]">design & prototype solution</span>
           </div>
           <div className="grid grid-cols-2 gap-[70px]">
             <p className={body}>
@@ -466,7 +466,7 @@ export default function BlockExplorer() {
         {/* CTA */}
         <section className="flex flex-col items-center gap-[20px] rounded-[16px] border border-[#292929] border-solid bg-[#0f0f0f] px-[40px] py-[70px] text-center">
           <h2 className="font-['Syne'] font-bold text-white text-[40px] tracking-[1px]">Let's talk about your project</h2>
-          <p className="font-['Syne'] text-[20px] text-[#7d8590]">Open to full-time roles, freelance collaboration, and design consulting.</p>
+          <p className="font-['Syne'] text-[20px] text-[#abacb3]">Open to full-time roles, freelance collaboration, and design consulting.</p>
           <div className="mt-[8px] flex items-center gap-[16px]">
             <input
               placeholder="Enter your email address"

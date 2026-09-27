@@ -64,7 +64,7 @@ export default function Contact() {
             <div className="flex flex-col font-['Syne'] font-bold justify-center relative shrink-0 text-[30px] text-white tracking-[1.2px] w-[582px]" data-node-id="1:7695">
               <p className="leading-[1.45]">Invite Yashi to your project</p>
             </div>
-            <div className="flex flex-col font-['Syne'] font-normal justify-center min-w-full relative shrink-0 text-[#7d8590] text-[20px] tracking-[0.8px]" data-node-id="1:7696">
+            <div className="flex flex-col font-['Syne'] font-normal justify-center min-w-full relative shrink-0 text-[#abacb3] text-[20px] tracking-[0.8px]" data-node-id="1:7696">
               <p className="leading-[1.45]">Open to full-time roles, freelance collaboration, and design discussions</p>
             </div>
           </div>
@@ -93,7 +93,7 @@ export default function Contact() {
               </div>
             </div>
             <div className="-translate-x-1/2 absolute bg-[#1a1a1a] content-stretch flex items-center justify-center left-[calc(50%+1px)] overflow-clip px-[24px] py-[11px] rounded-[60px] top-0" data-node-id="1:7704">
-              <div className="[word-break:break-word] flex flex-col font-['Syne'] font-semibold justify-center leading-[0] relative shrink-0 text-[#7d8590] text-[16px] text-center tracking-[-0.08px] whitespace-nowrap" data-node-id="1:7705">
+              <div className="[word-break:break-word] flex flex-col font-['Syne'] font-semibold justify-center leading-[0] relative shrink-0 text-[#abacb3] text-[16px] text-center tracking-[-0.08px] whitespace-nowrap" data-node-id="1:7705">
                 <p className="leading-[1.45]">or reach out directly</p>
               </div>
             </div>
@@ -131,7 +131,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        <div className="[word-break:break-word] absolute bottom-[54.5px] flex flex-col font-['Syne'] font-normal justify-center leading-[0] right-[410.5px] text-[#7d8590] text-[16px] text-center tracking-[0.64px] translate-x-1/2 translate-y-1/2 w-[751px]" data-node-id="1:7721">
+        <div className="[word-break:break-word] absolute bottom-[54.5px] flex flex-col font-['Syne'] font-normal justify-center leading-[0] right-[410.5px] text-[#abacb3] text-[16px] text-center tracking-[0.64px] translate-x-1/2 translate-y-1/2 w-[751px]" data-node-id="1:7721">
           <p className="leading-[1.45]">Response time-Usually within 12hrs</p>
         </div>
         <div className="absolute h-[508px] left-px overflow-clip top-0 w-[2px]" data-node-id="1:7722" data-name="Left edge">

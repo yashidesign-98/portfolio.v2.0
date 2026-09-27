@@ -32,7 +32,7 @@ function Work5({ className }: { className?: string }) {
           <div className={tag} data-node-id="1:210"><div className={tagText}><p className="leading-[1.45]">Landing Page</p></div></div>
           <div className={tag} data-node-id="1:212"><div className={tagText}><p className="leading-[1.45]">Website Design</p></div></div>
         </div>
-        <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Syne'] font-normal h-[63px] justify-center leading-[0] left-[39px] text-[#7d8590] text-[18px] top-[201px] tracking-[0.18px] w-[472px]" data-node-id="1:214">
+        <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Syne'] font-normal h-[63px] justify-center leading-[0] left-[39px] text-[#abacb3] text-[18px] top-[201px] tracking-[0.18px] w-[472px]" data-node-id="1:214">
           <p className="leading-[1.45]">{`Crafted a web3 website designs that stood out in the industry, maintaining the playful & modern nature.`}</p>
         </div>
         <div className={caseBtn} data-node-id="1:215"><div className={caseBtnText}><p className="leading-[1.45]">View Case Study →</p></div></div>
@@ -61,7 +61,7 @@ function Work4({ className }: { className?: string }) {
           <div className={tag} data-node-id="1:175"><div className={tagText}><p className="leading-[1.45]">NFT</p></div></div>
           <div className={tag} data-node-id="1:177"><div className={tagText}><p className="leading-[1.45]">{`Data Visualisation `}</p></div></div>
         </div>
-        <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Syne'] font-normal h-[63px] justify-center leading-[0] left-[39px] text-[#7d8590] text-[18px] top-[201px] tracking-[0.18px] w-[472px]" data-node-id="1:179">
+        <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Syne'] font-normal h-[63px] justify-center leading-[0] left-[39px] text-[#abacb3] text-[18px] top-[201px] tracking-[0.18px] w-[472px]" data-node-id="1:179">
           <p className="leading-[1.45]">Balanced innovation and familiarity in a redesigned blockchain explorer iinterface</p>
         </div>
         <div className={caseBtn} data-node-id="1:180"><div className={caseBtnText}><p className="leading-[1.45]">View Case Study →</p></div></div>
@@ -89,7 +89,7 @@ function Work3({ className }: { className?: string }) {
           <div className={tag} data-node-id="1:140"><div className={tagText}><p className="leading-[1.45]">{`Health & Wellness`}</p></div></div>
           <div className={tag} data-node-id="1:142"><div className={tagText}><p className="leading-[1.45]">Mobile App</p></div></div>
         </div>
-        <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Syne'] font-normal h-[63px] justify-center leading-[0] left-[39px] text-[#7d8590] text-[18px] top-[201px] tracking-[0.18px] w-[472px]" data-node-id="1:144">
+        <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Syne'] font-normal h-[63px] justify-center leading-[0] left-[39px] text-[#abacb3] text-[18px] top-[201px] tracking-[0.18px] w-[472px]" data-node-id="1:144">
           <p className="leading-[1.45]">Crafted a mobile app experience that takes the hassle out of healthcare.</p>
         </div>
         <div className={caseBtn} data-node-id="1:145"><div className={caseBtnText}><p className="leading-[1.45]">View Case Study →</p></div></div>
@@ -116,7 +116,7 @@ function Work2({ className }: { className?: string }) {
           <div className={tag} data-node-id="1:107"><div className={tagText}><p className="leading-[1.45]">Healthcare</p></div></div>
           <div className={tag} data-node-id="1:109"><div className={tagText}><p className="leading-[1.45]">Mobile App</p></div></div>
         </div>
-        <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Syne'] font-normal h-[63px] justify-center leading-[0] left-[39px] text-[#7d8590] text-[18px] top-[201.5px] tracking-[0.18px] w-[472px]" data-node-id="1:111">
+        <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Syne'] font-normal h-[63px] justify-center leading-[0] left-[39px] text-[#abacb3] text-[18px] top-[201.5px] tracking-[0.18px] w-[472px]" data-node-id="1:111">
           <p className="leading-[1.45]">Crafted a mobile app experience that takes the hassle out of healthcare.</p>
         </div>
         <div className={caseBtn} data-node-id="1:112"><div className={caseBtnText}><p className="leading-[1.45]">View Case Study →</p></div></div>
@@ -152,7 +152,7 @@ function Work1({ className }: { className?: string }) {
           <div className={tag} data-node-id="1:76"><div className={tagText}><p className="leading-[1.45]">SaaS</p></div></div>
           <div className={tag} data-node-id="1:78"><div className={tagText}><p className="leading-[1.45]">{`Digital Products & Technologies`}</p></div></div>
         </div>
-        <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Syne'] font-normal justify-center leading-[0] left-[39px] text-[#7d8590] text-[18px] top-[206px] tracking-[0.18px] w-[707px]" data-node-id="1:80">
+        <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Syne'] font-normal justify-center leading-[0] left-[39px] text-[#abacb3] text-[18px] top-[206px] tracking-[0.18px] w-[707px]" data-node-id="1:80">
           <p className="leading-[1.45]">Designed cloud platform interface that simplifies complex workflows for modern infrastructire</p>
         </div>
         <div className="absolute bottom-[30px] content-stretch flex items-center justify-center p-[16px] right-[40px] rounded-[6px]" data-node-id="1:81"><div className={caseBtnText}><p className="leading-[1.45]">View Case Study →</p></div></div>
@@ -173,7 +173,7 @@ export default function Work() {
         <div className="-translate-y-1/2 absolute flex flex-col font-['Syne'] font-bold justify-center left-0 text-[60px] text-white top-[43.5px] tracking-[2.4px]" data-node-id="1:7501">
           <p className="leading-[1.45]">Selected Work</p>
         </div>
-        <div className="-translate-y-1/2 absolute flex flex-col font-['Syne'] font-normal justify-center left-0 text-[#7d8590] text-[20px] top-[103.5px] tracking-[0.8px]" data-node-id="1:7502">
+        <div className="-translate-y-1/2 absolute flex flex-col font-['Syne'] font-normal justify-center left-0 text-[#abacb3] text-[20px] top-[103.5px] tracking-[0.8px]" data-node-id="1:7502">
           <p className="leading-[1.45]">Projects that shaped how I think about Design</p>
         </div>
       </div>

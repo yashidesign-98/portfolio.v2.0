@@ -66,7 +66,7 @@ function ProfileImage({ className }: { className?: string }) {
         animate={state}
         transition={topLabelTransition}
       >
-        <div className="[word-break:break-word] flex flex-col font-['Syne'] font-normal justify-center leading-[0] relative shrink-0 text-[#7d8590] text-[14px] tracking-[1.12px] whitespace-nowrap" data-node-id="1:53">
+        <div className="[word-break:break-word] flex flex-col font-['Syne'] font-normal justify-center leading-[0] relative shrink-0 text-[#abacb3] text-[14px] tracking-[1.12px] whitespace-nowrap" data-node-id="1:53">
           <p className="leading-[1.45]">layer : yashi_profile ~ selected</p>
         </div>
       </motion.div>
@@ -78,7 +78,7 @@ function ProfileImage({ className }: { className?: string }) {
         animate={state}
         transition={bottomLabelTransition}
       >
-        <div className="[word-break:break-word] flex flex-col font-['Syne'] font-normal justify-center leading-[0] relative shrink-0 text-[#7d8590] text-[14px] tracking-[1.12px] whitespace-nowrap" data-node-id="1:55">
+        <div className="[word-break:break-word] flex flex-col font-['Syne'] font-normal justify-center leading-[0] relative shrink-0 text-[#abacb3] text-[14px] tracking-[1.12px] whitespace-nowrap" data-node-id="1:55">
           <p className="leading-[1.45]">w:540 ~ H: 680 ~ opacity: 100% ~ blend: normal</p>
         </div>
       </motion.div>
@@ -111,7 +111,7 @@ export default function About() {
       </div>
       <div className="[word-break:break-word] absolute bg-[#101010] border border-[#343434] border-solid content-stretch flex flex-col font-['Syne'] font-medium items-start leading-[0] left-[797px] overflow-clip rounded-[10px] text-[18px] top-[444px] tracking-[0.18px] w-[973px] whitespace-nowrap" data-node-id="1:7473" data-name="About table">
         <div className="border-[#343434] border-b border-solid content-stretch flex items-center justify-between overflow-clip px-[30px] py-[20px] relative shrink-0 w-full" data-node-id="1:7474">
-          <div className="flex flex-col justify-center relative shrink-0 text-[#7d8590]" data-node-id="1:7475">
+          <div className="flex flex-col justify-center relative shrink-0 text-[#abacb3]" data-node-id="1:7475">
             <p className="leading-[1.45]">Current Role</p>
           </div>
           <div className="flex flex-col justify-center relative shrink-0 text-right text-white" data-node-id="1:7476">
@@ -119,7 +119,7 @@ export default function About() {
           </div>
         </div>
         <div className="border-[#343434] border-b border-solid content-stretch flex items-center justify-between overflow-clip px-[30px] py-[20px] relative shrink-0 w-full" data-node-id="1:7477">
-          <div className="flex flex-col justify-center relative shrink-0 text-[#7d8590]" data-node-id="1:7478">
+          <div className="flex flex-col justify-center relative shrink-0 text-[#abacb3]" data-node-id="1:7478">
             <p className="leading-[1.45]">Company</p>
           </div>
           <div className="flex flex-col justify-center relative shrink-0 text-right text-white" data-node-id="1:7479">
@@ -127,7 +127,7 @@ export default function About() {
           </div>
         </div>
         <div className="border-[#343434] border-b border-solid content-stretch flex items-center justify-between overflow-clip px-[30px] py-[20px] relative shrink-0 w-full" data-node-id="1:7480">
-          <div className="flex flex-col justify-center relative shrink-0 text-[#7d8590]" data-node-id="1:7481">
+          <div className="flex flex-col justify-center relative shrink-0 text-[#abacb3]" data-node-id="1:7481">
             <p className="leading-[1.45]">Focus</p>
           </div>
           <div className="flex flex-col justify-center relative shrink-0 text-right text-white" data-node-id="1:7482">
@@ -135,7 +135,7 @@ export default function About() {
           </div>
         </div>
         <div className="border-[#343434] border-b border-solid content-stretch flex items-center justify-between overflow-clip px-[30px] py-[20px] relative shrink-0 w-full" data-node-id="1:7483">
-          <div className="flex flex-col justify-center relative shrink-0 text-[#7d8590]" data-node-id="1:7484">
+          <div className="flex flex-col justify-center relative shrink-0 text-[#abacb3]" data-node-id="1:7484">
             <p className="leading-[1.45]">Experience</p>
           </div>
           <div className="flex flex-col justify-center relative shrink-0 text-right text-white" data-node-id="1:7485">
@@ -143,7 +143,7 @@ export default function About() {
           </div>
         </div>
         <div className="border-[#343434] border-b border-solid content-stretch flex items-center justify-between overflow-clip px-[30px] py-[20px] relative shrink-0 w-full" data-node-id="1:7486">
-          <div className="flex flex-col justify-center relative shrink-0 text-[#7d8590]" data-node-id="1:7487">
+          <div className="flex flex-col justify-center relative shrink-0 text-[#abacb3]" data-node-id="1:7487">
             <p className="leading-[1.45]">Background</p>
           </div>
           <div className="flex flex-col justify-center relative shrink-0 text-right text-white" data-node-id="1:7488">
@@ -157,7 +157,7 @@ export default function About() {
             <div className="relative shrink-0 size-[20px]" data-node-id="1:7490">
               <AccentMask src={imgStar1} className="absolute inset-0 size-full" stretch />
             </div>
-            <div className="[word-break:break-word] flex flex-col font-['Syne'] font-normal justify-center leading-[0] relative shrink-0 text-[#7d8590] text-[16px] tracking-[1.28px] w-[299px]" data-node-id="1:7491">
+            <div className="[word-break:break-word] flex flex-col font-['Syne'] font-normal justify-center leading-[0] relative shrink-0 text-[#abacb3] text-[16px] tracking-[1.28px] w-[299px]" data-node-id="1:7491">
               <p className="leading-[1.45]">I annotate my grocery lists in Figma</p>
             </div>
           </div>

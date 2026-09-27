@@ -26,7 +26,7 @@ const topOffsets = [40, 0, 50, 15, 45, 20];
 const bottomOffsets = [0, 55, 25, 65, 5];
 
 const font = "font-['Syne']";
-const body = `${font} font-normal text-[#7d8590] text-[20px] leading-[1.6] tracking-[0.18px]`;
+const body = `${font} font-normal text-[#abacb3] text-[20px] leading-[1.6] tracking-[0.18px]`;
 const label = `${font} text-[18px] uppercase tracking-[3px] text-[#6b7280]`;
 const heading = `${font} font-bold text-white text-[36px] tracking-[0.5px]`;
 
@@ -136,7 +136,7 @@ export default function FitnessApp() {
           <SectionPill>03 — Interface</SectionPill>
           <div className="flex flex-col gap-[6px]">
             <h2 className={heading}>User Interface</h2>
-            <span className={`${font} text-[20px] text-[#7d8590]`}>design solution</span>
+            <span className={`${font} text-[20px] text-[#abacb3]`}>design solution</span>
           </div>
 
           <div className="mt-[16px] flex flex-col gap-[28px]">

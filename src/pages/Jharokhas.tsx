@@ -24,7 +24,7 @@ const jam = [
 ];
 
 const font = "font-['Syne']";
-const body = `${font} font-normal text-[#7d8590] text-[20px] leading-[1.6] tracking-[0.18px]`;
+const body = `${font} font-normal text-[#abacb3] text-[20px] leading-[1.6] tracking-[0.18px]`;
 
 function Pill({ children }: { children: ReactNode }) {
   return (
@@ -79,7 +79,7 @@ export default function Jharokhas() {
           <div className="flex items-center justify-between">
             <div className="flex flex-col gap-[6px]">
               <h2 className={`${font} font-bold text-white text-[40px] tracking-[0.5px]`}>The set</h2>
-              <span className={`${font} text-[18px] text-[#7d8590]`}>six arches, one calm mood</span>
+              <span className={`${font} text-[18px] text-[#abacb3]`}>six arches, one calm mood</span>
             </div>
             <Pill>6 prints</Pill>
           </div>
@@ -95,7 +95,7 @@ export default function Jharokhas() {
             <h2 className={`${font} font-bold text-white text-[40px] tracking-[0.5px]`}>
               The <span className="text-[#ff5c3a]">jam</span>
             </h2>
-            <span className={`${font} text-[18px] text-[#7d8590]`}>how the set came together</span>
+            <span className={`${font} text-[18px] text-[#abacb3]`}>how the set came together</span>
           </div>
           <div className="grid grid-cols-3 gap-[24px]">
             {jam.map((j) => (

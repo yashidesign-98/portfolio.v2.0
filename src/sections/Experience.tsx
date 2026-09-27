@@ -112,7 +112,7 @@ export default function Experience() {
             <span className="leading-[1.45] text-[#6a6a6a]">node by node</span>
           </p>
         </div>
-        <div className="-translate-y-1/2 absolute flex flex-col font-['Syne'] font-normal justify-center left-0 text-[#7d8590] text-[20px] top-[103.5px] tracking-[0.8px]" data-node-id="1:7525">
+        <div className="-translate-y-1/2 absolute flex flex-col font-['Syne'] font-normal justify-center left-0 text-[#abacb3] text-[20px] top-[103.5px] tracking-[0.8px]" data-node-id="1:7525">
           <p className="leading-[1.45]">A career built on making complex systems feel effortless</p>
         </div>
       </div>
@@ -120,7 +120,7 @@ export default function Experience() {
         <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Syne'] font-bold justify-center leading-[0] left-[29px] text-[#ff5c3a] text-[16px] top-[40.5px] tracking-[0.64px] whitespace-nowrap" data-node-id="1:7527">
           <p className="leading-[1.45]">Coredge.io</p>
         </div>
-        <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Syne'] font-bold justify-center leading-[0] right-[85px] text-[#7d8590] text-[14px] top-[42px] tracking-[0.56px] translate-x-full whitespace-nowrap" data-node-id="1:7528">
+        <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Syne'] font-bold justify-center leading-[0] right-[85px] text-[#abacb3] text-[14px] top-[42px] tracking-[0.56px] translate-x-full whitespace-nowrap" data-node-id="1:7528">
           <p className="leading-[1.45]">NOIDA</p>
         </div>
         <div className="absolute content-stretch flex flex-col gap-[30px] items-end left-[32px] top-[72px] w-[1271px]" data-node-id="1:7529">
@@ -143,7 +143,7 @@ export default function Experience() {
                   <p className="leading-[1.45]">Current</p>
                 </div>
               </div>
-              <div className="[word-break:break-word] flex flex-col font-['Syne'] font-normal justify-center leading-[0] relative shrink-0 text-[#7d8590] text-[14px] tracking-[0.56px] whitespace-nowrap" data-node-id="1:7538">
+              <div className="[word-break:break-word] flex flex-col font-['Syne'] font-normal justify-center leading-[0] relative shrink-0 text-[#abacb3] text-[14px] tracking-[0.56px] whitespace-nowrap" data-node-id="1:7538">
                 <p className="leading-[1.45]">Apr 2026-Present</p>
               </div>
             </div>
@@ -177,7 +177,7 @@ export default function Experience() {
               <p className="leading-[1.45]">→ Defined major product features with refined UX to strategise seamless operations</p>
             </div>
             <div className="absolute content-stretch flex gap-[20px] h-[28px] items-center right-[20px] top-[24px]" data-node-id="1:7549">
-              <div className="[word-break:break-word] flex flex-col font-['Syne'] font-normal justify-center leading-[0] relative shrink-0 text-[#7d8590] text-[14px] text-right tracking-[0.56px] whitespace-nowrap" data-node-id="1:7553">
+              <div className="[word-break:break-word] flex flex-col font-['Syne'] font-normal justify-center leading-[0] relative shrink-0 text-[#abacb3] text-[14px] text-right tracking-[0.56px] whitespace-nowrap" data-node-id="1:7553">
                 <p className="leading-[1.45]">Sept-2023-Mar 2026</p>
               </div>
             </div>
@@ -188,7 +188,7 @@ export default function Experience() {
         <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Syne'] font-bold justify-center leading-[0] left-[29px] text-[#ff5c3a] text-[16px] top-[40.5px] tracking-[0.64px] whitespace-nowrap" data-node-id="1:7555">
           <p className="leading-[1.45]">Airchains Network</p>
         </div>
-        <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Syne'] font-bold justify-center leading-[0] right-[29px] text-[#7d8590] text-[14px] text-right top-[42px] tracking-[0.56px] whitespace-nowrap" data-node-id="1:7556">
+        <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Syne'] font-bold justify-center leading-[0] right-[29px] text-[#abacb3] text-[14px] text-right top-[42px] tracking-[0.56px] whitespace-nowrap" data-node-id="1:7556">
           <p className="leading-[1.45]">GURUGRAM</p>
         </div>
         <div className="absolute bg-[#242424] h-[151px] left-[33px] overflow-clip rounded-[8px] top-[72px] w-[1270px]" data-node-id="1:7557">
@@ -202,7 +202,7 @@ export default function Experience() {
             <p className="leading-[1.45]">→ Led end-to-end UX for Airchains’ clients including State Govt. entities</p>
           </div>
           <div className="absolute content-stretch flex gap-[20px] h-[28px] items-center right-[20px] top-[24px]" data-node-id="1:7561">
-            <div className="[word-break:break-word] flex flex-col font-['Syne'] font-normal justify-center leading-[0] relative shrink-0 text-[#7d8590] text-[14px] text-right tracking-[0.56px] whitespace-nowrap" data-node-id="1:7565">
+            <div className="[word-break:break-word] flex flex-col font-['Syne'] font-normal justify-center leading-[0] relative shrink-0 text-[#abacb3] text-[14px] text-right tracking-[0.56px] whitespace-nowrap" data-node-id="1:7565">
               <p className="leading-[1.45]">Feb-2023-Sept 2026</p>
             </div>
           </div>
@@ -212,7 +212,7 @@ export default function Experience() {
         <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Syne'] font-bold justify-center leading-[0] left-[29px] text-[#ff5c3a] text-[16px] top-[40.5px] tracking-[0.64px] whitespace-nowrap" data-node-id="1:7567">
           <p className="leading-[1.45]">DTroffle Digital Marketing</p>
         </div>
-        <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Syne'] font-bold justify-center leading-[0] right-[29px] text-[#7d8590] text-[14px] text-right top-[42px] tracking-[0.56px] whitespace-nowrap" data-node-id="1:7568">
+        <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Syne'] font-bold justify-center leading-[0] right-[29px] text-[#abacb3] text-[14px] text-right top-[42px] tracking-[0.56px] whitespace-nowrap" data-node-id="1:7568">
           <p className="leading-[1.45]">REMOTE</p>
         </div>
         <div className="absolute bg-[#242424] h-[151px] left-[33px] overflow-clip rounded-[8px] top-[72px] w-[1270px]" data-node-id="1:7569">
@@ -226,7 +226,7 @@ export default function Experience() {
             <p className="leading-[1.45]">→ Led end-to-end UX for Airchains’ clients including State Govt. entities</p>
           </div>
           <div className="absolute content-stretch flex gap-[20px] h-[28px] items-center right-[20px] top-[24px]" data-node-id="1:7573">
-            <div className="[word-break:break-word] flex flex-col font-['Syne'] font-normal justify-center leading-[0] relative shrink-0 text-[#7d8590] text-[14px] text-right tracking-[0.56px] whitespace-nowrap" data-node-id="1:7577">
+            <div className="[word-break:break-word] flex flex-col font-['Syne'] font-normal justify-center leading-[0] relative shrink-0 text-[#abacb3] text-[14px] text-right tracking-[0.56px] whitespace-nowrap" data-node-id="1:7577">
               <p className="leading-[1.45]">Aug-2022-Oct 2022</p>
             </div>
           </div>
@@ -236,7 +236,7 @@ export default function Experience() {
         <div className="-translate-y-1/2 absolute flex flex-col font-['Syne'] font-bold justify-center left-[29px] text-[#ff5c3a] text-[16px] top-[44.5px] tracking-[0.64px] whitespace-nowrap" data-node-id="1:7579">
           <p className="leading-[1.45]">Freelance UX Designer</p>
         </div>
-        <div className="absolute content-stretch flex gap-[20px] h-[28px] items-center right-[31px] text-[#7d8590] text-[14px] text-right top-[31px] tracking-[0.56px] whitespace-nowrap" data-node-id="1:7580">
+        <div className="absolute content-stretch flex gap-[20px] h-[28px] items-center right-[31px] text-[#abacb3] text-[14px] text-right top-[31px] tracking-[0.56px] whitespace-nowrap" data-node-id="1:7580">
           <div className="flex flex-col font-['Syne'] font-normal justify-center relative shrink-0" data-node-id="1:7584">
             <p className="leading-[1.45]">Dec-2020-Jan 2023</p>
           </div>

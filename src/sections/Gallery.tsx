@@ -49,7 +49,7 @@ export default function Gallery() {
           <div className="flex flex-col font-['Syne'] font-bold justify-center relative shrink-0 text-[40px] text-white tracking-[1.6px]" data-node-id="1:7648">
             <p className="leading-[1.45]">Late Night Prompts</p>
           </div>
-          <div className="flex flex-col font-['Syne'] font-normal justify-center relative shrink-0 text-[#7d8590] text-[20px] tracking-[0.8px]" data-node-id="1:7649">
+          <div className="flex flex-col font-['Syne'] font-normal justify-center relative shrink-0 text-[#abacb3] text-[20px] tracking-[0.8px]" data-node-id="1:7649">
             <p className="leading-[1.45]">Teaching generative models some taste, one poster set and twenty iterations at a time.</p>
           </div>
         </div>

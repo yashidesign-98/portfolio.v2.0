@@ -98,7 +98,7 @@ function SectionHead({ n, label }: { n: number; label: string }) {
 }
 
 const heading = "font-['Syne'] font-bold text-white text-[40px] tracking-[1px]";
-const body = "font-['Syne'] font-normal text-[#7d8590] text-[20px] leading-[1.6] tracking-[0.18px]";
+const body = "font-['Syne'] font-normal text-[#abacb3] text-[20px] leading-[1.6] tracking-[0.18px]";
 const cardBase = "rounded-[12px] border border-[#292929] border-solid bg-[#141414] p-[28px]";
 const cardTitle = "font-['Syne'] font-bold text-white text-[20px]";
 const cardDesc = "font-['Syne'] text-[18px] leading-[1.6] text-[#929292]";
@@ -149,7 +149,7 @@ export default function CaseStudy() {
                 quota management — into an intuitive and streamlined experience.
               </p>
               <div className="flex flex-col gap-[16px] pt-[8px]">
-                <span className="font-['Syne'] text-[18px] uppercase tracking-[1.6px] text-[#7d8590]">The design delivers</span>
+                <span className="font-['Syne'] text-[18px] uppercase tracking-[1.6px] text-[#abacb3]">The design delivers</span>
                 {overviewBullets.map((b) => (
                   <div key={b.lead} className="flex items-start gap-[12px]">
                     <span className="mt-[3px] font-['Syne'] font-bold text-[#ff5c3a]">✦</span>
@@ -312,7 +312,7 @@ export default function CaseStudy() {
         {/* CTA */}
         <section className="flex flex-col items-center gap-[20px] rounded-[16px] border border-[#292929] border-solid bg-[#0f0f0f] px-[40px] py-[70px] text-center">
           <h2 className="font-['Syne'] font-bold text-white text-[40px] tracking-[1px]">Invite Yashi to your project</h2>
-          <p className="font-['Syne'] text-[20px] text-[#7d8590]">Open to full-time roles, freelance collaboration, and design consulting.</p>
+          <p className="font-['Syne'] text-[20px] text-[#abacb3]">Open to full-time roles, freelance collaboration, and design consulting.</p>
           <div className="mt-[8px] flex items-center gap-[16px]">
             <input
               placeholder="Enter your email address"

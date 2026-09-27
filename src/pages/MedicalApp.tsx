@@ -68,7 +68,7 @@ function SectionHead({ n, label, center = false }: { n: number; label: string; c
 }
 
 const heading = "font-['Syne'] font-bold text-white text-[40px] tracking-[1px]";
-const body = "font-['Syne'] font-normal text-[#7d8590] text-[20px] leading-[1.6] tracking-[0.18px]";
+const body = "font-['Syne'] font-normal text-[#abacb3] text-[20px] leading-[1.6] tracking-[0.18px]";
 
 // Ordered to match the Figma "User interface" board: splash → onboarding →
 // home/profile → info pages → appointment & chat flows → doctor lists.
@@ -111,7 +111,7 @@ export default function MedicalApp() {
           <div className="grid grid-cols-4 border-y border-[#232323]">
             {meta.map((m, i) => (
               <div key={m.label} className={`px-[24px] py-[22px] ${i > 0 ? "border-l border-[#232323]" : ""}`}>
-                <div className="mb-[8px] font-['Syne'] text-[18px] uppercase tracking-[1.4px] text-[#7d8590]">{m.label}</div>
+                <div className="mb-[8px] font-['Syne'] text-[18px] uppercase tracking-[1.4px] text-[#abacb3]">{m.label}</div>
                 <div className="font-['Syne'] text-[20px] text-white">{m.value}</div>
               </div>
             ))}
@@ -153,7 +153,7 @@ export default function MedicalApp() {
           <SectionHead n={2} label="Results" />
           <div className="flex flex-col gap-[6px]">
             <h2 className={heading}>Results</h2>
-            <span className="font-['Syne'] text-[18px] text-[#7d8590]">achieved with UX/UI</span>
+            <span className="font-['Syne'] text-[18px] text-[#abacb3]">achieved with UX/UI</span>
           </div>
           <div className="grid grid-cols-4 gap-[24px]">
             {results.map((r) => (
@@ -234,7 +234,7 @@ export default function MedicalApp() {
         {/* CTA */}
         <section className="flex flex-col items-center gap-[20px] rounded-[16px] border border-[#292929] border-solid bg-[#0f0f0f] px-[40px] py-[70px] text-center">
           <h2 className="font-['Syne'] font-bold text-white text-[40px] tracking-[1px]">Invite Yashi to your project</h2>
-          <p className="font-['Syne'] text-[20px] text-[#7d8590]">Open to full-time roles, freelance collaboration, and design consulting.</p>
+          <p className="font-['Syne'] text-[20px] text-[#abacb3]">Open to full-time roles, freelance collaboration, and design consulting.</p>
           <div className="mt-[8px] flex items-center gap-[16px]">
             <input
               placeholder="Enter your email address"

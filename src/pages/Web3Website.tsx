@@ -30,7 +30,7 @@ const keySections = [
 ];
 
 const serif = "font-['Syne']";
-const body = "font-['Syne'] font-normal text-[#7d8590] text-[20px] leading-[1.6] tracking-[0.18px]";
+const body = "font-['Syne'] font-normal text-[#abacb3] text-[20px] leading-[1.6] tracking-[0.18px]";
 const cardBase = "rounded-[12px] border border-[#292929] border-solid bg-[#141414] p-[28px]";
 
 // Numbered teardrop counter badge, accent-tinted (matches the other case studies).

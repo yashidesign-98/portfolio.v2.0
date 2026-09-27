@@ -59,7 +59,7 @@ export default function Hero() {
           </div>
         </button>
       </div>
-      <div className="-translate-x-full -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Syne'] font-medium justify-center leading-[0] left-[1310px] text-[#7d8590] text-[24px] text-right top-[736px] tracking-[-0.12px] w-[560px]" data-node-id="1:7429">
+      <div className="-translate-x-full -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Syne'] font-medium justify-center leading-[0] left-[1310px] text-[#abacb3] text-[24px] text-right top-[736px] tracking-[-0.12px] w-[560px]" data-node-id="1:7429">
         <p className="leading-[1.45]">I design fresh experiences from scratch - and sprinkling some magic on existing ones.</p>
       </div>
       <div className="pointer-events-none absolute h-[851px] left-0 top-0 w-[1748px]" data-node-id="1:7430" data-name="Marching ants">
@@ -102,7 +102,7 @@ export default function Hero() {
       </div>
       <div className="absolute h-[45px] left-[1015px] top-[73px] w-[233px] float-badge" data-node-id="1:7439">
         <motion.div className="absolute contents left-[-11px] top-0" data-node-id="1:7440">
-          <div className="-translate-x-1/2 absolute bg-[#1e1e1e] border border-[#7d8590] border-solid content-stretch flex gap-[8px] items-center justify-center left-[calc(50%+28px)] overflow-clip px-[33px] py-[11px] rounded-[10px] top-0" data-node-id="1:7441">
+          <div className="-translate-x-1/2 absolute bg-[#1e1e1e] border border-[#abacb3] border-solid content-stretch flex gap-[8px] items-center justify-center left-[calc(50%+28px)] overflow-clip px-[33px] py-[11px] rounded-[10px] top-0" data-node-id="1:7441">
             <div className="[word-break:break-word] flex flex-col font-['Syne'] font-medium justify-center leading-[0] relative shrink-0 text-[#c1c1c1] text-[16px] text-center tracking-[-0.08px] whitespace-nowrap" data-node-id="1:7443">
               <p className="leading-[1.45]">5+ years of exp</p>
             </div>
@@ -123,7 +123,7 @@ export default function Hero() {
       </div>
       <div className="-translate-x-1/2 absolute h-[45px] left-[calc(50%+517px)] top-[208px] w-[244px] float-badge" style={{ animationDelay: "-1.3s" }} data-node-id="1:7446">
         <motion.div className="absolute contents left-[-20px] top-0" data-node-id="1:7447">
-          <div className="-translate-x-1/2 absolute bg-[#1e1e1e] border border-[#7d8590] border-solid content-stretch flex gap-[8px] items-center justify-center left-[calc(50%+22.5px)] overflow-clip px-[33px] py-[11px] rounded-[10px] top-0" data-node-id="1:7448">
+          <div className="-translate-x-1/2 absolute bg-[#1e1e1e] border border-[#abacb3] border-solid content-stretch flex gap-[8px] items-center justify-center left-[calc(50%+22.5px)] overflow-clip px-[33px] py-[11px] rounded-[10px] top-0" data-node-id="1:7448">
             <div className="[word-break:break-word] flex flex-col font-['Syne'] font-semibold justify-center leading-[0] relative shrink-0 text-[#c1c1c1] text-[16px] text-center tracking-[-0.08px] whitespace-nowrap" data-node-id="1:7450">
               <p className="leading-[1.45]">Google Certified</p>
             </div>
@@ -142,7 +142,7 @@ export default function Hero() {
       </div>
       <div className="-translate-x-1/2 absolute h-[45px] left-[calc(50%+800.5px)] top-[611px] w-[233px] float-badge" style={{ animationDelay: "-2.6s" }} data-node-id="1:7453">
         <motion.div className="absolute contents left-[6px] top-0" data-node-id="1:7454">
-          <div className="-translate-x-1/2 absolute bg-[#1e1e1e] border border-[#7d8590] border-solid content-stretch flex gap-[20px] items-center justify-center left-[calc(50%+28px)] overflow-clip px-[33px] py-[11px] rounded-[10px] top-0" data-node-id="1:7455">
+          <div className="-translate-x-1/2 absolute bg-[#1e1e1e] border border-[#abacb3] border-solid content-stretch flex gap-[20px] items-center justify-center left-[calc(50%+28px)] overflow-clip px-[33px] py-[11px] rounded-[10px] top-0" data-node-id="1:7455">
             <div className="[word-break:break-word] flex flex-col font-['Syne'] font-semibold justify-center leading-[0] relative shrink-0 text-[#c1c1c1] text-[16px] text-center tracking-[-0.08px] whitespace-nowrap" data-node-id="1:7457">
               <p className="leading-[1.45]">Frame 1097773</p>
             </div>

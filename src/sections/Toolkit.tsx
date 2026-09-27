@@ -200,7 +200,7 @@ function ToolkitComponent({ className }: { className?: string }) {
 const certCard =
   "absolute bg-[#1a1a1a] border border-[#494949] border-solid flex gap-[60px] h-[127px] items-center overflow-clip px-[24px] py-[8px] right-0 rounded-[4px] w-[711px]";
 const certSub =
-  "flex flex-col font-['Syne'] font-normal justify-center relative shrink-0 text-[#7d8590] text-[16px] tracking-[1.28px] w-[573px] leading-[1.45]";
+  "flex flex-col font-['Syne'] font-normal justify-center relative shrink-0 text-[#abacb3] text-[16px] tracking-[1.28px] w-[573px] leading-[1.45]";
 
 function VerifiedBadge() {
   return (
@@ -237,7 +237,7 @@ export default function Toolkit() {
           <div className="font-['Syne'] font-bold text-[40px] text-white tracking-[1.6px] leading-[1.45]">
             Certifications
           </div>
-          <div className="font-['Syne'] font-normal text-[#7d8590] text-[20px] tracking-[0.8px] leading-[1.45]">
+          <div className="font-['Syne'] font-normal text-[#abacb3] text-[20px] tracking-[0.8px] leading-[1.45]">
             Credentials that helped me grow
           </div>
         </div>

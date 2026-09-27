@@ -90,7 +90,7 @@ export default function Header() {
               key={item.label}
               onClick={() => scrollTo(item.target)}
               className={`group relative font-['Syne'] font-medium text-[20px] text-center tracking-[-0.1px] whitespace-nowrap cursor-pointer pb-[4px] transition-colors ${
-                isActive ? "text-white" : "text-[#7d8590] hover:text-white"
+                isActive ? "text-white" : "text-[#abacb3] hover:text-white"
               }`}
             >
               {item.label}
