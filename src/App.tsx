@@ -13,6 +13,7 @@ import FitnessApp from "./pages/FitnessApp";
 import KitschOdyssey from "./pages/KitschOdyssey";
 import Jharokhas from "./pages/Jharokhas";
 import SummerRemix from "./pages/SummerRemix";
+import MobileHome from "./mobile/MobileHome";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Work from "./sections/Work";
@@ -95,8 +96,18 @@ export default function App() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [wrapHeight]);
 
+  const isHome = !route;
   return (
     <>
+      {/* Mobile / tablet home layout (below the lg breakpoint). */}
+      {isHome && (
+        <div className="lg:hidden">
+          <MobileHome />
+        </div>
+      )}
+
+      {/* Desktop scaled canvas — always for case studies; lg+ only for home. */}
+      <div className={isHome ? "hidden lg:block" : undefined}>
       {/* Fixed Figma-chrome: header pinned to top, tool sidebar pinned to left.
           Both are scaled by the same factor as the canvas so they line up. */}
       <div
@@ -225,6 +236,7 @@ export default function App() {
       <footer className="sr-only">
         <p>© Yashi Bhatnagar — UX/UI Designer, India. designbyyashi.com</p>
       </footer>
+      </div>
     </>
   );
 }

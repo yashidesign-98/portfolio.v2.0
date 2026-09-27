@@ -300,8 +300,8 @@ export default function Sidebar() {
   );
 
   return (
-    <div className="relative bg-[#1e1e1e] flex h-[1023px] items-start py-[40px] w-[72px] rounded-br-[16px]">
-      <div className="flex flex-col gap-[40px] items-center justify-center px-[11px] py-[20px] relative w-[72px]">
+    <div className="relative bg-[#1e1e1e] flex h-[1023px] items-start py-[28px] w-[72px] rounded-br-[16px]">
+      <div className="flex flex-col gap-[26px] items-center justify-center px-[11px] py-[8px] relative w-[72px]">
         <div className="flex flex-col gap-[18px] items-center">
           <button
             className={iconBtn(tool === null)}
@@ -352,7 +352,7 @@ export default function Sidebar() {
         </div>
 
         <button className={iconBtn(menu === "color")} style={btnStyle(menu === "color")} onClick={(e) => openMenu("color", e)} title="Accent colour">
-          <span className="block size-[38px] rounded-[5px]" style={{ backgroundColor: accent }} />
+          <span className="block size-[32px] rounded-[5px]" style={{ backgroundColor: accent }} />
         </button>
       </div>
 

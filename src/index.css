@@ -63,6 +63,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Prevent horizontal scroll on mobile/tablet (the desktop canvas is a fixed
+   1980px width shown only at lg+). */
+@media (max-width: 1023px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
 #root {
   width: 100%;
 }
